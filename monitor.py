@@ -1,6 +1,3 @@
-# My First Monitor
-# general goal: read every second the CPU usage
-
 import csv
 import signal
 import sys
@@ -11,18 +8,30 @@ import pandas as pd
 # Function for CPU
 def read_cpu_usage():
     cpu_t = psutil.cpu_times()
-    usr_sp_cputime = cpu_t.user
-    idle_time = cpu_t.idle
-    cpu_dict = {"user time ": usr_sp_cputime, " idle time ": idle_time}
-    cpu_dict["interrupt_time"] = cpu_t.interrupt
+    cpu_dict = {}
+    cpu_dict["cpu_user_time"] = cpu_t.user
+    cpu_dict["cpu_idle_time"] = cpu_t.idle
+    cpu_dict["cpu_interrupt_time"] = cpu_t.interrupt
+    cpu_dict["cpu_utilization_percentage"] = psutil.cpu_percent()
+    cpu_dict["cpu_frequency"]= psutil.cpu_freq()
     return cpu_dict
 
 # Function for Memory
 def read_memory_usage():
     memory = psutil.virtual_memory()
-    memory_dict = {"total memory ": memory.total, "available memory ": memory.available, "percentage usage ": memory.percent}
+    memory_dict = {}
+    memory_dict["total_memory"] = memory.total / (1024 ** 3) # values refer to GB
+    memory_dict["available_memory"] = memory.available / (1024 ** 3) # values refer to GB
+    memory_dict["memory_percentage_usage"] = memory.percent
     return memory_dict
 
+# Function for Battery
+def read_battery_information():
+    battery = psutil.sensors_battery()
+    battery_dict = {}
+    battery_dict["battery_percentage"]= battery.percent
+    battery_dict["power_plugged"]= battery.power_plugged
+    return battery_dict
 
 # Function for Excel File
 def write_dict_to_csv(filename, dict_file, first_time):
@@ -43,11 +52,11 @@ def signal_handler_wrapper(signum, frame):
     signal_handler()
 
 def signal_handler():
-    # Carica il file CSV
-    df_new = pd.read_csv('my_first_dataset.csv')
+    # Load file CSV
+    df_new = pd.read_csv('labelled_dataset.csv')
 
-    # Salva il file in formato Excel
-    df_new.to_excel('my_first_dataset.xlsx', index = False)
+    # Save file in Excel format
+    df_new.to_excel('labelled_dataset.xlsx', index = False)
     
     sys.exit(0)
 
@@ -58,8 +67,9 @@ if __name__ == "__main__":
     while True:
         dict = read_cpu_usage()
         dict.update(read_memory_usage())
+        dict.update(read_battery_information())
 
-        write_dict_to_csv("my_first_dataset.csv", dict, first_time)
+        write_dict_to_csv("labelled_dataset.csv", dict, first_time)
         first_time = False
         print(dict)
-        sleep(1)
+        sleep(0.5)
