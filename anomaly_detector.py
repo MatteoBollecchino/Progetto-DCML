@@ -3,53 +3,35 @@ import time
 
 import sklearn
 from pandas import read_csv
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.ensemble import VotingClassifier, StackingClassifier, RandomForestClassifier, GradientBoostingClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import confusion_matrix
+import sklearn.metrics
 from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeClassifier
 
 # Sets random seed to increase repeatability
 random.seed(23)
 
 if __name__ == "__main__":
 
-    # load dataset
+    # Load dataset
     my_dataset = read_csv("labelled_dataset.csv")
     label_obj = my_dataset["label"]
     data_obj = my_dataset.drop(columns=["label", "time", "datetime"])
 
-    # split dataset
+    # Split dataset
     train_data, test_data, train_label, test_label = train_test_split(data_obj, label_obj, test_size=0.5)
 
-    # choose classifier SCIKIT LEARN
-    # Set of classifiers that I want to run and compare
-    classifiers = [VotingClassifier(estimators=[('lda', LinearDiscriminantAnalysis()),
-                                                ('nb', GaussianNB()),
-                                                ('dt', DecisionTreeClassifier())]),
-                   StackingClassifier(estimators=[('lda', LinearDiscriminantAnalysis()),
-                                                  ('nb', GaussianNB()),
-                                                  ('dt', DecisionTreeClassifier())],
-                                      final_estimator=RandomForestClassifier(n_estimators=10)),
-                   DecisionTreeClassifier(),
-                   GaussianNB(),
-                   LinearDiscriminantAnalysis(),
-                   KNeighborsClassifier(n_neighbors=11),
-                   RandomForestClassifier(n_estimators=10),
-                   RandomForestClassifier(n_estimators=3),
-                   GradientBoostingClassifier()]
+    # Choose an algorithm as a classifier
+    classifiers = RandomForestClassifier(n_estimators=200)
 
-    for clf in classifiers:
-        # Training an algorithm
-        clf = clf.fit(train_data, train_label)
+    # Training the algorithm
+    classifiers = classifiers.fit(train_data, train_label)
 
-        # Testing the trained model
-        predicted_labels = clf.predict(test_data)
+    # Testing the trained model
+    predicted_labels = classifiers.predict(test_data)
 
-        # Computing metrics to understand how good an algorithm is
-        accuracy = sklearn.metrics.accuracy_score(test_label, predicted_labels)
-        tn, fp, fn, tp = confusion_matrix(test_label, predicted_labels).ravel()
-        print("%s: Accuracy is %.4f, train time: %d, test time: %d TP: %d, TN: %d, FN: %d, FP: %d" % (
-            clf.__class__.__name__, accuracy, tp, tn, fn, fp))
+    # Computing metrics to understand how good an algorithm is
+    accuracy = sklearn.metrics.accuracy_score(test_label, predicted_labels)
+    mcc = sklearn.metrics.matthews_corrcoef(test_label, predicted_labels)
+    tn, fp, fn, tp = confusion_matrix(test_label, predicted_labels).ravel()
+    print("Accuracy is %.4f, MCC is %.4f, TP: %d, TN: %d, FN: %d, FP: %d" % (accuracy, mcc, tp, tn, fn, fp))        
