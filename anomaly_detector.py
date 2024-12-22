@@ -1,7 +1,7 @@
 import random
-import time
-
+import joblib
 import sklearn
+
 from pandas import read_csv
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier, VotingClassifier
@@ -20,7 +20,8 @@ if __name__ == "__main__":
     # Load dataset
     my_dataset = read_csv("labelled_dataset.csv")
     label_obj = my_dataset["label"]
-    data_obj = my_dataset.drop(columns=["label", "time", "datetime"])
+    data_obj = my_dataset.drop(columns=["label", "total_virtual_memory", "swap_total_memory",
+                                        "power_plugged", "cpu_min_frequency", "cpu_max_frequency"])
 
     # Split dataset
     train_data, test_data, train_label, test_label = train_test_split(data_obj, label_obj, test_size=0.5)
@@ -31,8 +32,8 @@ if __name__ == "__main__":
                                                 ('dt', DecisionTreeClassifier())]),
                    DecisionTreeClassifier(),
                    KNeighborsClassifier(n_neighbors=11),
-                   RandomForestClassifier(n_estimators=10),
-                   RandomForestClassifier(n_estimators=3),
+                   RandomForestClassifier(n_estimators=200),
+                   RandomForestClassifier(n_estimators=50),
                    GradientBoostingClassifier()]
 
     # Declarating list to contain the MCC values for each classifier
@@ -59,5 +60,8 @@ if __name__ == "__main__":
     max_mcc_index = mcc_list.index(max(mcc_list))   
 
     final_classifier = classifiers[max_mcc_index] 
+
+    # Save the selected model in a file
+    joblib.dump(final_classifier,"classifier.z")
 
 

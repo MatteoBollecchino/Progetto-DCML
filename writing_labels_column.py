@@ -34,12 +34,15 @@ def aggiungi_colonna_csv(nome_file, nome_colonna, valori_colonna):
         scrittore.writerows(lettore)
 
 # Esempio di utilizzo
-nome_file_csv = 'labelled_dataset.csv'
-nome_nuova_colonna = 'label'
-dimensione_dataset = 72
+nome_file_csv = "labelled_dataset.csv"
+nome_nuova_colonna = "label"
+dimensione_dataset = 42
 valori = []
 
 for i in range(dimensione_dataset):
-    valori.append('normal')
+    if i%2==0:
+        valori.append("normal")
+    else:
+        valori.append("anomaly")
 
 aggiungi_colonna_csv(nome_file_csv, nome_nuova_colonna, valori)
