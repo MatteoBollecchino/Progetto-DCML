@@ -39,6 +39,7 @@ nome_nuova_colonna = "label"
 dimensione_dataset = 42
 valori = []
 
+# Da modificare (classificazione usata per prova)
 for i in range(dimensione_dataset):
     if i%2==0:
         valori.append("normal")
