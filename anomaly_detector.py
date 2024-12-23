@@ -24,7 +24,7 @@ if __name__ == "__main__":
                                         "power_plugged", "cpu_min_frequency", "cpu_max_frequency"])
 
     # Split dataset
-    train_data, test_data, train_label, test_label = train_test_split(data_obj, label_obj, test_size=0.5)
+    train_data, test_data, train_label, test_label = train_test_split(data_obj, label_obj, test_size=0.7)
 
     # Choose an algorithm as a classifier
     classifiers = [VotingClassifier(estimators=[('lda', LinearDiscriminantAnalysis()),
@@ -57,11 +57,12 @@ if __name__ == "__main__":
               (clf.__class__.__name__, accuracy, mcc, tp, tn, fn, fp))   
 
     # Finding the index of the classifier with the best MCC
-    max_mcc_index = mcc_list.index(max(mcc_list))   
+    max_mcc_index = mcc_list.index(max(mcc_list))  
 
     final_classifier = classifiers[max_mcc_index] 
+    print("Final classifier: %s" % (final_classifier.__class__.__name__)) 
 
     # Save the selected model in a file
-    joblib.dump(final_classifier,"classifier")
+    joblib.dump(final_classifier,"classifier.z")
 
 
