@@ -17,7 +17,7 @@ def genera_carico_cpu(num_processi=None):
                         Se None, utilizza il numero massimo di core disponibili.
     """
     if num_processi is None:
-        num_processi = multiprocessing.cpu_count() -1  # Numero massimo di core
+        num_processi = multiprocessing.cpu_count() -1  # Numero alto di core
 
     print(f"Generando carico CPU su {num_processi} core...")
     processi = []
