@@ -4,6 +4,15 @@ import sys
 from time import sleep
 import psutil
 import pandas as pd
+from datetime import datetime
+
+# Function for Datetime
+def read_time():
+    
+    time_dict = {}
+    time_dict["time"] = datetime.now().strftime("%H:%M:%S")
+
+    return time_dict
 
 # Function for CPU
 def read_cpu_usage():
@@ -59,7 +68,7 @@ def read_battery_information():
     
     return battery_dict
 
-# Function for Excel File
+# Function for Excel File (for better visualization)
 def write_dict_to_csv(filename, dict_file, first_time):
     if first_time:
         f = open(filename,  'w+', newline="") 
@@ -92,7 +101,8 @@ if __name__ == "__main__":
 
     signal.signal(signal.SIGINT, signal_handler_wrapper)
     while True:
-        dict = read_cpu_usage()
+        dict = read_time()
+        dict.update(read_cpu_usage())
         dict.update(read_virtual_memory_usage())
         dict.update(read_swap_memory_usage())
         dict.update(read_battery_information())

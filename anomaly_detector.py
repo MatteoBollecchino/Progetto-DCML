@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # Load dataset
     my_dataset = read_csv("labelled_dataset.csv")
     label_obj = my_dataset["label"]
-    data_obj = my_dataset.drop(columns=["label", "total_virtual_memory", "swap_total_memory",
+    data_obj = my_dataset.drop(columns=["label", "time", "total_virtual_memory", "swap_total_memory",
                                         "power_plugged", "cpu_min_frequency", "cpu_max_frequency"])
 
     # Split dataset
