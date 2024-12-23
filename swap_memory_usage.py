@@ -29,4 +29,4 @@ def genera_carico_swap(dim_totale_gb=4, incremento_mb=100, pausa_sec=1):
         memoria.clear()
 
 if __name__ == "__main__":
-    genera_carico_swap(dim_totale_gb=8, incremento_mb=100, pausa_sec=0.5)
+    genera_carico_swap(dim_totale_gb=8, incremento_mb=100, pausa_sec=1)

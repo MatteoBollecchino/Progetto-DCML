@@ -7,7 +7,7 @@ def lavoro_intenso():
     Esegue calcoli infiniti per mantenere il core occupato.
     """
     while True:
-        _ = sum(i * i for i in range(10**6))  # Calcolo intensivo
+        _ = sum(i * i for i in range(10**1))  # Calcolo intensivo
 
 def genera_carico_cpu(num_processi=None):
     """
@@ -17,7 +17,7 @@ def genera_carico_cpu(num_processi=None):
                         Se None, utilizza il numero massimo di core disponibili.
     """
     if num_processi is None:
-        num_processi = multiprocessing.cpu_count()  # Numero massimo di core
+        num_processi = multiprocessing.cpu_count() -1  # Numero massimo di core
 
     print(f"Generando carico CPU su {num_processi} core...")
     processi = []
