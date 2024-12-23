@@ -62,6 +62,6 @@ if __name__ == "__main__":
     final_classifier = classifiers[max_mcc_index] 
 
     # Save the selected model in a file
-    joblib.dump(final_classifier,"classifier.z")
+    joblib.dump(final_classifier,"classifier")
 
 

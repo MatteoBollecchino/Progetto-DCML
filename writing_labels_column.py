@@ -36,14 +36,17 @@ def aggiungi_colonna_csv(nome_file, nome_colonna, valori_colonna):
 # Esempio di utilizzo
 nome_file_csv = "labelled_dataset.csv"
 nome_nuova_colonna = "label"
-dimensione_dataset = 42
+dimensione_dataset = 39
 valori = []
 
 # Da modificare (classificazione usata per prova)
 for i in range(dimensione_dataset):
-    if i%2==0:
+    if i in range(15):
         valori.append("normal")
-    else:
+    elif i in range(16,30):
         valori.append("anomaly")
+    else:
+        valori.append("normal")
+
 
 aggiungi_colonna_csv(nome_file_csv, nome_nuova_colonna, valori)
