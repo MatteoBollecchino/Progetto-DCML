@@ -15,6 +15,7 @@ from sklearn.tree import DecisionTreeClassifier
 # Sets random seed to increase repeatability
 random.seed(23)
 
+# Main Function
 if __name__ == "__main__":
 
     # Load dataset
