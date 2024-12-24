@@ -1,41 +1,38 @@
 import multiprocessing
 import time
 
-def lavoro_intenso():
-    """
-    Funzione che simula un carico intenso sulla CPU.
-    Esegue calcoli infiniti per mantenere il core occupato.
-    """
-    while True:
-        _ = sum(i * i for i in range(10**1))  # Calcolo intensivo
-
-def genera_carico_cpu(num_processi=None):
-    """
-    Avvia più processi per generare un carico significativo sulla CPU.
+# Function that simulates heavy CPU load performing infinite calculations to keep the core busy.
+def intensive_work():
     
-    :param num_processi: Numero di processi da avviare (equivale ai core da occupare).
-                        Se None, utilizza il numero massimo di core disponibili.
-    """
-    if num_processi is None:
-        num_processi = multiprocessing.cpu_count() -1  # Numero alto di core
+    while True:
+        result = sum(i * i for i in range(10**1))  # Intensive calculation
 
-    print(f"Generando carico CPU su {num_processi} core...")
-    processi = []
-    for _ in range(num_processi):
-        processo = multiprocessing.Process(target=lavoro_intenso)
-        processo.start()
-        processi.append(processo)
+# Function that starts multiple processes to generate significant CPU load.
+def generate_cpu_load(num_processes=None):
+    
+    # num_processes = None -> All the cores are used
+    if num_processes is None:
+        num_processes = multiprocessing.cpu_count() - 1  # High number of cores
+
+    print(f"Generating CPU load on {num_processes} cores...")
+    processes = []
+
+    for i in range(num_processes):
+        process = multiprocessing.Process(target=intensive_work)
+        process.start()
+        processes.append(process)
     
     try:
-        # Mantieni il programma attivo per osservare l'uso della CPU
+        # Keep the program running to observe CPU usage
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
-        print("Interruzione ricevuta. Arresto dei processi...")
-        for processo in processi:
-            processo.terminate()
-        for processo in processi:
-            processo.join()
+        print("Interrupt received. Stopping processes...")
+        for process in processes:
+            process.terminate()
+        for process in processes:
+            process.join()
 
+# Main function
 if __name__ == "__main__":
-    genera_carico_cpu()
+    generate_cpu_load()

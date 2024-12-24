@@ -1,59 +1,61 @@
 import csv
+import pandas as pd
 
-def aggiungi_colonna_csv(nome_file, nome_colonna, valori_colonna):
-    """
-    Aggiunge una colonna a un file CSV esistente.
+# Function that adds a column to an existing CSV file.
+def add_csv_column(file_name, column_name, column_values):
     
-    :param nome_file: Nome del file CSV da modificare.
-    :param nome_colonna: Nome della nuova colonna da aggiungere.
-    :param valori_colonna: Lista dei valori per la nuova colonna.
-    """
-    # Leggi il contenuto del file CSV
-    with open(nome_file, mode='r', newline='', encoding='utf-8') as file_csv:
-        lettore = list(csv.reader(file_csv))
+    # Read the content of the CSV file
+    with open(file_name, mode='r', newline='', encoding='utf-8') as csv_file:
+        reader = list(csv.reader(csv_file))
         
-        # Aggiungi il nome della colonna come intestazione
-        if len(lettore) > 0:
-            lettore[0].append(nome_colonna)
+        # Add the column name as a header
+        if len(reader) > 0:
+            reader[0].append(column_name)
         else:
-            # Se il file è vuoto, crea solo l'intestazione
-            lettore.append([nome_colonna])
+            # If the file is empty, create only the header
+            reader.append([column_name])
         
-        # Aggiungi i valori della colonna
-        for i, valore in enumerate(valori_colonna):
-            if i + 1 < len(lettore):
-                lettore[i + 1].append(valore)
+        # Add the column values
+        for i, value in enumerate(column_values):
+            if i + 1 < len(reader):
+                reader[i + 1].append(value)
             else:
-                # Se ci sono più valori che righe, aggiungi nuove righe
-                nuova_riga = [''] * (len(lettore[0]) - 1) + [valore]
-                lettore.append(nuova_riga)
+                # If there are more values than rows, add new rows
+                new_row = [''] * (len(reader[0]) - 1) + [value]
+                reader.append(new_row)
 
-    # Scrivi il contenuto aggiornato nel file CSV
-    with open(nome_file, mode='w', newline='', encoding='utf-8') as file_csv:
-        scrittore = csv.writer(file_csv)
-        scrittore.writerows(lettore)
+    # Write the updated content back to the CSV file
+    with open(file_name, mode='w', newline='', encoding='utf-8') as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerows(reader)
 
-# Esempio di utilizzo
-nome_file_csv = "labelled_dataset.csv"
-nome_nuova_colonna = "label"
-dimensione_dataset = 493
-valori = []
+# Main function
+if __name__ == "__main__":
+    csv_file_name = "labelled_dataset.csv"
+    new_column_name = "label"
+    dataset_size = 493
+    values = []
 
-# Da modificare (classificazione usata per prova)
-for i in range(dimensione_dataset):
-    if i in range(117):
-        valori.append("normal")
-    elif i in range(118,203):
-        valori.append("anomaly")
-    elif i in range(204,268):
-        valori.append("normal")
-    elif i in range(269,328):
-        valori.append("anomaly")
-    elif i in range(329,409):
-        valori.append("normal")
-    elif i in range(410,467):
-        valori.append("anomaly")
-    else:
-        valori.append("normal")
+    for i in range(dataset_size):
+        if i in range(117):
+            values.append("normal")
+        elif i in range(118, 203):
+            values.append("anomaly")
+        elif i in range(204, 268):
+            values.append("normal")
+        elif i in range(269, 328):
+            values.append("anomaly")
+        elif i in range(329, 409):
+            values.append("normal")
+        elif i in range(410, 467):
+            values.append("anomaly")
+        else:
+            values.append("normal")
 
-aggiungi_colonna_csv(nome_file_csv, nome_nuova_colonna, valori)
+    add_csv_column(csv_file_name, new_column_name, values)
+
+    # Load file CSV
+    df_new = pd.read_csv('labelled_dataset.csv')
+
+    # Save file in Excel format
+    df_new.to_excel('labelled_dataset.xlsx', index = False)

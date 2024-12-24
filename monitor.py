@@ -71,7 +71,6 @@ def read_battery_information():
     
     return battery_dict
 
-# Function for Excel File (for better visualization)
 def write_dict_to_csv(filename, dict_file, first_time):
     if first_time:
         f = open(filename,  'w+', newline="") 
@@ -95,6 +94,7 @@ def generate_datapoint():
 
     return dict
 
+# Function for Excel File (for better visualization of the dataset)
 def generate_excel():
     # Load file CSV
     df_new = pd.read_csv('labelled_dataset.csv')
@@ -104,16 +104,16 @@ def generate_excel():
 
 def monitoring_runtime():
     # Create a socket object
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Bind the socket to an address and port
-    s.bind((IP_ADDR, PORT))
+    socket.bind((IP_ADDR, PORT))
 
     # Listen for incoming connections
-    s.listen()
+    socket.listen()
 
     # Accept a connection from the client
-    c, addr = s.accept()
+    c, addr = socket.accept()
     print('Got connection from', addr)
 
     """
@@ -134,7 +134,7 @@ first_time = True
 if __name__ == "__main__":
 
     # The 'try' part is excecuted for the monitoring aimed to the training of the model
-    # The 'except' part is excecuted for the monitoring aimed to anomaly detetction at runtime
+    # The 'except' part is excecuted for the monitoring aimed to the anomaly detetction at runtime
     try:
         while True:
             dict = generate_datapoint()

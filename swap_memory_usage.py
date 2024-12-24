@@ -1,32 +1,30 @@
 import time
 
-def genera_carico_swap(dim_totale_gb=4, incremento_mb=100, pausa_sec=1):
-    """
-    Genera un carico sulla swap memory allocando memoria oltre la capacità della RAM.
-    
-    :param dim_totale_gb: Dimensione totale della memoria da allocare (in GB).
-    :param incremento_mb: Incremento della memoria allocata ad ogni iterazione (in MB).
-    :param pausa_sec: Pausa tra ogni incremento in secondi.
-    """
-    blocco_dimensione = incremento_mb * 1024 * 1024  # Dimensione del blocco in byte
-    totale_byte = dim_totale_gb * 1024 * 1024 * 1024  # Dimensione totale in byte
+# Function that generates load on the swap memory by allocating memory beyond the RAM capacity.
+def generate_swap_load(total_size_gb=4, increment_mb=100, pause_sec=1):
 
-    print(f"Avvio allocazione di {dim_totale_gb} GB di memoria...")
-    memoria = []
+    block_size = increment_mb * 1024 * 1024  # Block size in bytes
+    total_bytes = total_size_gb * 1024 * 1024 * 1024  # Total size in bytes
+
+    print(f"Starting allocation of {total_size_gb} GB of memory...")
+    memory = []
+
     try:
-        for i in range(0, totale_byte, blocco_dimensione):
-            # Alloca memoria creando blocchi di stringhe
-            blocco = " " * blocco_dimensione
-            memoria.append(blocco)  # Mantieni il blocco in memoria
-            print(f"Allocati {len(memoria) * incremento_mb} MB di memoria.")
-            time.sleep(pausa_sec)  # Pausa per osservare l'incremento
+        for i in range(0, total_bytes, block_size):
+            # Allocate memory by creating blocks of strings
+            block = " " * block_size
+            memory.append(block)  # Keep the block in memory
+            print(f"Allocated {len(memory) * increment_mb} MB of memory.")
+            time.sleep(pause_sec)  # Pause to observe the increment
     except MemoryError:
-        print("Memoria esaurita! La RAM e la swap sono al limite.")
+        print("Memory exhausted! RAM and swap are at their limit.")
     finally:
-        print(f"Allocati in totale {len(memoria) * incremento_mb} MB di memoria.")
-        input("Premi Invio per rilasciare la memoria...")
-        # Libera tutta la memoria allocata
-        memoria.clear()
+        print(f"Total allocated memory: {len(memory) * increment_mb} MB.")
+        input("Press Enter to release the memory...")
 
+        # Free all allocated memory
+        memory.clear()
+
+# Main function
 if __name__ == "__main__":
-    genera_carico_swap(dim_totale_gb=8, incremento_mb=100, pausa_sec=1)
+    generate_swap_load(total_size_gb=8, increment_mb=100, pause_sec=1)
