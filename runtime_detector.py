@@ -2,6 +2,8 @@ import subprocess
 from time import sleep
 import joblib
 import socket
+import json
+import sklearn
 
 IP_ADDR = "127.0.0.1"
 PORT = 12345
@@ -14,27 +16,32 @@ if __name__ == "__main__":
     print("Selcted classifier: %s" % (classifier.__class__.__name__))
 
     # Create a socket object
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     while True:
         # Connect to the server at localhost on port 12345
-        result = s.connect_ex((IP_ADDR, PORT))
+        result = sock.connect_ex((IP_ADDR, PORT))
         if result == 0:
             break
         print("Connection failed")
 
-    """
     # Il while serve a far rimanere il classifier in ascolto a runtime
     while True:
         # Receive data from the server
-        data = s.recv(1024)
-        print(f'Received {data.decode()}')
-    """
+        data = sock.recv(1024)
+        if data:
+            received_dict = json.loads(data.decode('utf-8'))
+            print(f"Dizionario ricevuto: {received_dict}")
 
-    data = s.recv(1024)
-    print(f'Received {data.decode()}')
+        predicted_label = classifier.predict(received_dict)
+
+        # da riguardare
+        if predicted_label == "anomaly":
+            subprocess.run('start cmd /k "echo Anomaly Detected!"', shell=True)
+        break
+
     # Close the connection
-    s.close()
+    sock.close()
 
     # Da usare quandoil detector riconosce un'anomaly 
     # subprocess.run('start cmd /k "echo Anomaly Detected!"', shell=True)

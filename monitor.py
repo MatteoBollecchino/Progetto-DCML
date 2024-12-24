@@ -1,10 +1,11 @@
 import csv
+import socket
 import sys
 from time import sleep
 import psutil
 import pandas as pd
 from datetime import datetime
-import socket
+import json
 
 IP_ADDR = "127.0.0.1"
 PORT = 12345
@@ -73,17 +74,17 @@ def read_battery_information():
 
 def write_dict_to_csv(filename, dict_file, first_time):
     if first_time:
-        f = open(filename,  'w+', newline="") 
+        file = open(filename,  'w+', newline="") 
     else:
-        f = open(filename,  'a', newline="")
+        file = open(filename,  'a', newline="")
 
-    w = csv.DictWriter(f,dict_file.keys())
+    writer = csv.DictWriter(file, dict_file.keys())
 
     if first_time:
-        w.writeheader()
+        writer.writeheader()
 
-    w.writerow(dict_file)
-    f.close()   
+    writer.writerow(dict_file)
+    file.close()   
 
 def generate_datapoint():
     dict = read_time()
@@ -102,31 +103,34 @@ def generate_excel():
     # Save file in Excel format
     df_new.to_excel('labelled_dataset.xlsx', index = False)
 
-def monitoring_runtime():
+def runtime_monitoring():
     # Create a socket object
-    socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
     # Bind the socket to an address and port
-    socket.bind((IP_ADDR, PORT))
+    sock.bind((IP_ADDR, PORT))
 
     # Listen for incoming connections
-    socket.listen()
+    sock.listen()
 
     # Accept a connection from the client
-    c, addr = socket.accept()
+    connection, addr = sock.accept()
     print('Got connection from', addr)
 
-    """
     while True:
         dict = generate_datapoint()
-        # Send the datapoint to the anomaly_detector
-        c.send(dict)
+
+        # Send the datapoint to the runtime_detector
+        serialized_data = json.dumps(dict).encode('utf-8')
+        connection.sendall(serialized_data)
         print(dict)
         sleep(1)
-    """
+        if True:
+            break
 
     # Close the connection
-    c.close()
+    connection.close()
+    sock.close()
     sys.exit(0)
     
 # Main Function
@@ -138,12 +142,12 @@ if __name__ == "__main__":
     try:
         while True:
             dict = generate_datapoint()
-
             write_dict_to_csv("labelled_dataset.csv", dict, first_time)
             first_time = False
             print(dict)
             sleep(1)
     except KeyboardInterrupt:
         generate_excel() # Creation of the relative excel file for a better visualization of the dataset
-        print("Monitoting aimed for training terminated!")
-        monitoring_runtime() # Monitoring function aimed to anomaly detetction at runtime
+        print("\nMonitoring aimed for the training of the model terminated!")
+        print("\nRuntime monitoring starting...\n")
+        runtime_monitoring() # Monitoring function aimed to anomaly detetction at runtime
