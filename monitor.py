@@ -125,6 +125,8 @@ def runtime_monitoring():
         connection.sendall(serialized_data)
         print(dict)
         sleep(1)
+
+        # da modificare
         if True:
             break
 

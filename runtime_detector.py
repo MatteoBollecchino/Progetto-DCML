@@ -25,7 +25,7 @@ if __name__ == "__main__":
             break
         print("Connection failed")
 
-    # Il while serve a far rimanere il classifier in ascolto a runtime
+    # With the while-instruction the runtime classifier stays reciving datapoints
     while True:
         # Receive data from the server
         data = sock.recv(1024)
@@ -33,12 +33,18 @@ if __name__ == "__main__":
             received_dict = json.loads(data.decode('utf-8'))
             print(f"Dizionario ricevuto: {received_dict}")
 
-        predicted_label = classifier.predict(received_dict)
+        # Trasforma 'dict' in un array bidimensionale
+        # Capire come è strutturato il parametro di predict in anomaly_detector 
 
-        # da riguardare
+        break
+
+        """
+        predicted_label = classifier.predict([[received_dict]])
+
         if predicted_label == "anomaly":
             subprocess.run('start cmd /k "echo Anomaly Detected!"', shell=True)
-        break
+            break
+        """
 
     # Close the connection
     sock.close()

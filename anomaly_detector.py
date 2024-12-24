@@ -46,6 +46,7 @@ if __name__ == "__main__":
 
         # Testing the trained model
         predicted_labels = clf.predict(test_data)
+        print(test_data)
 
         # Computing metrics to understand how good an algorithm is
         accuracy = sklearn.metrics.accuracy_score(test_label, predicted_labels)
@@ -64,6 +65,6 @@ if __name__ == "__main__":
     print("Final classifier: %s" % (final_classifier.__class__.__name__)) 
 
     # Save the selected model in a file
-    joblib.dump(final_classifier,"classifier.z")
+    # joblib.dump(final_classifier,"classifier.z")
 
 
