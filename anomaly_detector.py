@@ -60,6 +60,6 @@ if __name__ == "__main__":
     print("Final classifier: %s" % (final_classifier.__class__.__name__)) 
 
     # Save the selected model in a file
-    # joblib.dump(final_classifier,"classifier.z")
+    joblib.dump(final_classifier,"classifier1.z")
 
 

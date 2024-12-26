@@ -14,4 +14,4 @@ if __name__ == "__main__":
                 rambar.refresh()
                 sleep(1)
     except KeyboardInterrupt:
-        print("Monitoring terminated")
+        print("Monitoring terminated!")
