@@ -13,7 +13,7 @@ PORT = 12345
 if __name__ == "__main__":
 
     # The classifier selected after training is loaded from the file
-    classifier = joblib.load("classifier.z")
+    classifier = joblib.load("classifier1.z")
     print("Selcted classifier:", classifier.__class__.__name__)
 
     # Create a socket object
