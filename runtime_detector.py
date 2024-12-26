@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     # The classifier selected after training is loaded from the file
     classifier = joblib.load("classifier1.z")
-    print("Selcted classifier:", classifier.__class__.__name__)
+    print("Selected classifier:", classifier.__class__.__name__)
 
     # Create a socket object
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
