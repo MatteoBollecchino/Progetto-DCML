@@ -33,7 +33,7 @@ def add_csv_column(file_name, column_name, column_values):
 if __name__ == "__main__":
     csv_file_name = "labelled_dataset.csv"
     new_column_name = "label"
-    dataset_size = 493
+    dataset_size = 46
     values = []
 
     for i in range(dataset_size):
@@ -51,6 +51,13 @@ if __name__ == "__main__":
             values.append("anomaly")
         else:
             values.append("normal")
+    """
+    for i in range(dataset_size):
+        if i%2==0:
+            values.append("normal")
+        else:
+            values.append("anomaly")
+    """
 
     add_csv_column(csv_file_name, new_column_name, values)
 

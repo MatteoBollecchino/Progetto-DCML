@@ -3,7 +3,7 @@ from time import sleep
 import joblib
 import socket
 import json
-import sklearn
+import pandas as pd
 
 IP_ADDR = "127.0.0.1"
 PORT = 12345
@@ -34,17 +34,17 @@ if __name__ == "__main__":
             print(f"Dizionario ricevuto: {received_dict}")
 
         # Trasforma 'dict' in un array bidimensionale
-        # Capire come è strutturato il parametro di predict in anomaly_detector 
-
-        break
-
-        """
-        predicted_label = classifier.predict([[received_dict]])
+        test_dict = pd.DataFrame([received_dict])
+        print(test_dict)
+        predicted_label = classifier.predict(test_dict)
+        print(predicted_label)
 
         if predicted_label == "anomaly":
             subprocess.run('start cmd /k "echo Anomaly Detected!"', shell=True)
             break
-        """
+
+        break
+
 
     # Close the connection
     sock.close()

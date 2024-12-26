@@ -46,7 +46,6 @@ if __name__ == "__main__":
 
         # Testing the trained model
         predicted_labels = clf.predict(test_data)
-        print(test_data)
 
         # Computing metrics to understand how good an algorithm is
         accuracy = sklearn.metrics.accuracy_score(test_label, predicted_labels)
