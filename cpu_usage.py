@@ -5,7 +5,7 @@ import time
 def intensive_work():
     
     while True:
-        result = sum(i * i for i in range(10**1))  # Intensive calculation
+        _ = sum(i * i for i in range(10**1))  # Intensive calculation
 
 # Function that starts multiple processes to generate significant CPU load.
 def generate_cpu_load(num_processes=None):
@@ -14,10 +14,10 @@ def generate_cpu_load(num_processes=None):
     if num_processes is None:
         num_processes = multiprocessing.cpu_count() - 1  # High number of cores
 
-    print(f"Generating CPU load on {num_processes} cores...")
+    print("Generating CPU load on", num_processes, "cores...")
     processes = []
 
-    for i in range(num_processes):
+    for _ in range(num_processes):
         process = multiprocessing.Process(target=intensive_work)
         process.start()
         processes.append(process)

@@ -76,29 +76,26 @@ def runtime_monitoring():
 
     # Accept a connection from the client
     connection, addr = sock.accept()
-    print('Got connection from', addr)
+    print("Got connection from", addr, "\n")
 
-    while True:
-        dict = generate_datapoint()
+    try:
+        while True:
+            dict = generate_datapoint()
 
-        # Send the datapoint to the runtime_detector
-        serialized_data = json.dumps(dict).encode('utf-8')
-        connection.sendall(serialized_data)
-        print(dict)
-        sleep(1)
-
-        # da modificare
-        if True:
-            break
-
-    # Close the connection
-    connection.close()
-    sock.close()
-    sys.exit(0)
-    
+            # Send the datapoint to the runtime_detector
+            serialized_data = json.dumps(dict).encode('utf-8')
+            connection.sendall(serialized_data)
+            print(dict)
+            print("\n")
+            sleep(1)
+    except KeyboardInterrupt:
+        # Close the connection
+        connection.close()
+        sock.close()
+        print("Runtime monitoring terminated!\n")
+        sys.exit(0)
     
 # Main Function
-first_time = True
 if __name__ == "__main__":
     print("\nRuntime monitoring starting...\n")
 

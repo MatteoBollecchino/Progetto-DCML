@@ -1,4 +1,3 @@
-import random
 import joblib
 import sklearn
 
@@ -11,9 +10,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
-
-# Sets random seed to increase repeatability
-random.seed(23)
 
 # Main Function
 if __name__ == "__main__":
@@ -32,7 +28,7 @@ if __name__ == "__main__":
                                                 ('nb', GaussianNB()),
                                                 ('dt', DecisionTreeClassifier())]),
                    DecisionTreeClassifier(),
-                   KNeighborsClassifier(n_neighbors=11),
+                   KNeighborsClassifier(n_neighbors=15),
                    RandomForestClassifier(n_estimators=200),
                    RandomForestClassifier(n_estimators=50),
                    GradientBoostingClassifier()]

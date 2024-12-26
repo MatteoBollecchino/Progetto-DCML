@@ -92,10 +92,10 @@ def generate_datapoint():
 # Function for Excel File (for better visualization of the dataset)
 def generate_excel():
     # Load file CSV
-    df_new = pd.read_csv('labelled_dataset.csv')
+    df_new = pd.read_csv("labelled_dataset.csv")
 
     # Save file in Excel format
-    df_new.to_excel('labelled_dataset.xlsx', index = False)
+    df_new.to_excel("labelled_dataset.xlsx", index = False)
     
 # Main Function
 first_time = True
@@ -110,4 +110,4 @@ if __name__ == "__main__":
             sleep(1)
     except KeyboardInterrupt:
         generate_excel() # Creation of the relative excel file for a better visualization of the dataset
-        print("\nMonitoring aimed for the training of the model terminated!")
+        print("\nMonitoring aimed for the training of the model terminated!\n")
