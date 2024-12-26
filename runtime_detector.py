@@ -33,7 +33,7 @@ if __name__ == "__main__":
         data = sock.recv(1024)
         if data:
             received_dict = json.loads(data.decode("utf-8"))
-            print("Dictionary received:", {received_dict}, "\n")
+            print("Dictionary received:", received_dict, "\n")
 
         # the condition is satisfied when the runtime_monitor is stopped
         if received_dict == previous_dict:
@@ -53,5 +53,7 @@ if __name__ == "__main__":
         predicted_label = classifier.predict(test_dict)
         print(predicted_label, "\n")
 
+        """
         if predicted_label == "anomaly":
             subprocess.run('start cmd /k "echo Anomaly Detected!"', shell=True)
+        """
