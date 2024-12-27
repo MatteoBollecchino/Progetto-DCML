@@ -9,10 +9,10 @@ IP_ADDR = "127.0.0.1"
 PORT = 12345
 
 # Da adattare per il file txt
-def write_to_txt(filename, dict, label, first_time):
+def write_to_txt(filename,classifier_name, dict, label, first_time):
     if first_time:
         file = open(filename,  'w+', newline="") 
-        file.write("Runtime Detection Results:\n")
+        file.writelines(["Runtime Detection Results using ",classifier_name,"\n"])
     else:
         file = open(filename,  'a', newline="")
 
@@ -27,7 +27,8 @@ if __name__ == "__main__":
 
     # The classifier selected after training is loaded from the file
     classifier = joblib.load("classifier1.z")
-    print("Selected classifier:", classifier.__class__.__name__)
+    classifier_name = classifier.__class__.__name__
+    print("Selected classifier:", classifier_name)
 
     # Create a socket object
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -67,6 +68,6 @@ if __name__ == "__main__":
         print(predicted_label, "\n")
 
         # All the information written on the terminal is also saved in a text file
-        write_to_txt("runtime_result.txt", received_dict, predicted_label, first_time)
+        write_to_txt("runtime_result.txt",classifier_name, received_dict, predicted_label, first_time)
         first_time = False
 
