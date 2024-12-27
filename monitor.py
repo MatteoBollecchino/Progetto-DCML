@@ -106,7 +106,7 @@ if __name__ == "__main__":
             dict = generate_datapoint()
             write_dict_to_csv("labelled_dataset.csv", dict, first_time)
             first_time = False
-            print(dict)
+            print(dict,"\n")
             sleep(1)
     except KeyboardInterrupt:
         generate_excel() # Creation of the relative excel file for a better visualization of the dataset

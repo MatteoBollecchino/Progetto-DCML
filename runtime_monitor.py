@@ -85,8 +85,7 @@ def runtime_monitoring():
             # Send the datapoint to the runtime_detector
             serialized_data = json.dumps(dict).encode('utf-8')
             connection.sendall(serialized_data)
-            print(dict)
-            print("\n")
+            print(dict, "\n")
             sleep(1)
     except KeyboardInterrupt:
         # Close the connection

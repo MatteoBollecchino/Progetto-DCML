@@ -1,4 +1,3 @@
-import csv
 from time import sleep
 import joblib
 import socket
@@ -9,28 +8,17 @@ import sys
 IP_ADDR = "127.0.0.1"
 PORT = 12345
 
-
-def write_dict_to_csv(filename, dict_file, first_time):
+# Da adattare per il file txt
+def write_to_txt(filename, dict, label, first_time):
     if first_time:
         file = open(filename,  'w+', newline="") 
+        file.write("Runtime Detection Results:\n")
     else:
         file = open(filename,  'a', newline="")
 
-    writer = csv.DictWriter(file, dict_file.keys())
+    file.writelines(["\nDatapoint:\n", str(dict), "\nPredicted label: ", str(label), "\n"])
 
-    if first_time:
-        writer.writeheader()
-
-    writer.writerow(dict_file)
     file.close() 
-
-# Function for Excel File (for better visualization of the dataset)
-def generate_excel():
-    # Load file CSV
-    df_new = pd.read_csv("runtime_result.csv")
-
-    # Save file in Excel format
-    df_new.to_excel("runtime_result.xlsx", index = False)
 
 
 first_time = True
@@ -70,16 +58,15 @@ if __name__ == "__main__":
 
         previous_dict = received_dict
 
-        # Th received dictionary is transformed in a bidimensional array
+        # The received dictionary is transformed in a bidimensional array
         test_dict = pd.DataFrame([received_dict])
         print(test_dict, "\n")
-
-        # da capire come scrivere i risultati su file
-        write_dict_to_csv("runtime_result.csv", received_dict, first_time)
-        first_time = False
-        generate_excel()
 
         # The model defines the label associated to the datapoint 
         predicted_label = classifier.predict(test_dict)
         print(predicted_label, "\n")
+
+        # All the information written on the terminal is also saved in a text file
+        write_to_txt("runtime_result.txt", received_dict, predicted_label, first_time)
+        first_time = False
 
