@@ -92,10 +92,10 @@ def generate_datapoint():
 # Function for Excel File (for better visualization of the dataset)
 def generate_excel():
     # Load file CSV
-    df_new = pd.read_csv("labelled_dataset.csv")
+    new_file = pd.read_csv("labelled_dataset.csv")
 
     # Save file in Excel format
-    df_new.to_excel("labelled_dataset.xlsx", index = False)
+    new_file.to_excel("labelled_dataset.xlsx", index = False)
     
 # Main Function
 first_time = True

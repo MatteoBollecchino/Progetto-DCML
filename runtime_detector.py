@@ -8,8 +8,7 @@ import sys
 IP_ADDR = "127.0.0.1"
 PORT = 12345
 
-# Da adattare per il file txt
-def write_to_txt(filename,classifier_name, dict, label, first_time):
+def write_to_txt(filename, classifier_name, dict, label, first_time):
     if first_time:
         file = open(filename,  'w+', newline="") 
         file.writelines(["Runtime Detection Results using ",classifier_name,"\n"])
