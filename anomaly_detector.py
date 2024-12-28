@@ -4,7 +4,7 @@ import sys
 
 from pandas import read_csv
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier, VotingClassifier
+from sklearn.ensemble import RandomForestClassifier, VotingClassifier
 from sklearn.metrics import confusion_matrix, f1_score
 import sklearn.metrics
 from sklearn.model_selection import train_test_split
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     my_dataset = read_csv("labelled_dataset.csv")
     label_obj = my_dataset["label"]
     data_obj = my_dataset.drop(columns=["label", "time", "total_virtual_memory", "swap_total_memory",
-                                        "power_plugged", "cpu_min_frequency", "cpu_max_frequency"])
+                                        "cpu_min_frequency", "cpu_max_frequency"])
 
     # Split dataset
     train_data, test_data, train_label, test_label = train_test_split(data_obj, label_obj, test_size=0.7)
@@ -31,10 +31,9 @@ if __name__ == "__main__":
                    DecisionTreeClassifier(),
                    KNeighborsClassifier(n_neighbors=15),
                    RandomForestClassifier(n_estimators=200),
-                   RandomForestClassifier(n_estimators=50),
-                   GradientBoostingClassifier()]
+                   RandomForestClassifier(n_estimators=50)]
 
-    # Declarating list to contain the MCC values for each classifier
+    # Declarating list to contain the MCC value for each classifier
     mcc_list = []
 
     with open("metrics_result.txt", "w+", newline="") as file:
@@ -71,5 +70,5 @@ if __name__ == "__main__":
     sys.stdout = sys.__stdout__
     
     # Save the selected model in a file
-    # joblib.dump(final_classifier,"classifier1.z")
+    joblib.dump(final_classifier,"classifier2.z")
 
