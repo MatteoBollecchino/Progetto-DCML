@@ -38,7 +38,7 @@ if __name__ == "__main__":
     mcc_list = []
 
     with open("metrics_result.txt", "w+", newline="") as file:
-        # stdout is redirected to the file
+        # stdout is redirected to the file indicated
         sys.stdout = file
 
         print("Metrics Results \n")
@@ -67,7 +67,7 @@ if __name__ == "__main__":
         final_classifier = classifiers[max_mcc_index] 
         print("\nFinal classifier: " ,final_classifier.__class__.__name__)
 
-    # stdout is restored
+    # stdout is restored to the terminal
     sys.stdout = sys.__stdout__
     
     # Save the selected model in a file

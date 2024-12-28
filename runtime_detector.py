@@ -39,7 +39,7 @@ if __name__ == "__main__":
             break
         print("Connection failed")
 
-    # With the while-instruction the runtime classifier stays reciving datapoints
+    # With the while-instruction the runtime classifier stays receiving datapoints
     previous_dict = {}
     while True:
         # Receive data from the server
