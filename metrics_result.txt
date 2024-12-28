@@ -1,0 +1,10 @@
+Metrics Results 
+
+VotingClassifier: Accuracy: 0.9923, MCC: 0.9838, F1-score weighted: 0.9923, TP: 238, TN: 147, FN: 0, FP: 3
+DecisionTreeClassifier: Accuracy: 0.9897, MCC: 0.9783, F1-score weighted: 0.9897, TP: 237, TN: 147, FN: 1, FP: 3
+KNeighborsClassifier: Accuracy: 0.9536, MCC: 0.9032, F1-score weighted: 0.9531, TP: 236, TN: 134, FN: 2, FP: 16
+RandomForestClassifier: Accuracy: 0.9923, MCC: 0.9837, F1-score weighted: 0.9923, TP: 236, TN: 149, FN: 2, FP: 1
+RandomForestClassifier: Accuracy: 0.9923, MCC: 0.9837, F1-score weighted: 0.9923, TP: 236, TN: 149, FN: 2, FP: 1
+GradientBoostingClassifier: Accuracy: 0.9897, MCC: 0.9783, F1-score weighted: 0.9897, TP: 236, TN: 148, FN: 2, FP: 2
+
+Final classifier:  VotingClassifier

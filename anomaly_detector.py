@@ -1,5 +1,6 @@
 import joblib
 import sklearn
+import sys
 
 from pandas import read_csv
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
@@ -10,17 +11,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
-
-def write_to_txt(filename, classifier_name, accuracy, mcc, first_time):
-    if first_time:
-        file = open(filename,  'w+', newline="") 
-        file.write("Metrics Results \n\n")
-    else:
-        file = open(filename,  'a', newline="")
-
-    file.writelines([str(classifier_name), ": ", "Accuracy is ", str(accuracy), "MCC is ", str(mcc),"\n"])
-
-    file.close() 
 
 # Main Function
 if __name__ == "__main__":
@@ -47,38 +37,39 @@ if __name__ == "__main__":
     # Declarating list to contain the MCC values for each classifier
     mcc_list = []
 
-    for clf in classifiers:
-        # Training an algorithm
-        clf = clf.fit(train_data, train_label)
+    with open("metrics_result.txt", "w+", newline="") as file:
+        # stdout is redirected to the file
+        sys.stdout = file
 
-        # Testing the trained model
-        predicted_labels = clf.predict(test_data)
+        print("Metrics Results \n")
+        for clf in classifiers:
+            # Training an algorithm
+            clf = clf.fit(train_data, train_label)
 
-        # Computing metrics to understand how good an algorithm is
-        accuracy = sklearn.metrics.accuracy_score(test_label, predicted_labels)
-        mcc = sklearn.metrics.matthews_corrcoef(test_label, predicted_labels)
-        f1score = f1_score(test_label, predicted_labels, average=None)
+            # Testing the trained model
+            predicted_labels = clf.predict(test_data)
 
-        mcc_list.append(mcc)
+            # Computing metrics to understand how good an algorithm is
+            accuracy = sklearn.metrics.accuracy_score(test_label, predicted_labels)
+            mcc = sklearn.metrics.matthews_corrcoef(test_label, predicted_labels)
+            f1score_weighted = f1_score(test_label, predicted_labels, average="weighted")
 
-        tn, fp, fn, tp = confusion_matrix(test_label, predicted_labels).ravel()
-        classifier_name = clf.__class__.__name__
-        # da modificare in formato con le virgole
-        print("%s: Accuracy is %.4f, MCC is %.4f, TP: %d, TN: %d, FN: %d, FP: %d" % 
-              (classifier_name, accuracy, mcc, tp, tn, fn, fp)) 
+            mcc_list.append(mcc)
 
-        # Da testare
-        # All the information written on the terminal is also saved in a text file
-        write_to_txt("metrics_result.txt",classifier_name, accuracy, mcc, first_time)
-        first_time = False  
+            tn, fp, fn, tp = confusion_matrix(test_label, predicted_labels).ravel()
+            classifier_name = clf.__class__.__name__
+            print("%s: Accuracy: %.4f, MCC: %.4f, F1-score weighted: %.4f, TP: %d, TN: %d, FN: %d, FP: %d" % (
+                classifier_name, accuracy, mcc, f1score_weighted, tp, tn, fn, fp)) 
 
-    # Finding the index of the classifier with the best MCC
-    max_mcc_index = mcc_list.index(max(mcc_list))  
+        # Finding the index of the classifier with the best MCC
+        max_mcc_index = mcc_list.index(max(mcc_list))  
 
-    final_classifier = classifiers[max_mcc_index] 
-    print("Final classifier: %s" % (final_classifier.__class__.__name__)) 
+        final_classifier = classifiers[max_mcc_index] 
+        print("\nFinal classifier: " ,final_classifier.__class__.__name__)
 
+    # stdout is restored
+    sys.stdout = sys.__stdout__
+    
     # Save the selected model in a file
     # joblib.dump(final_classifier,"classifier1.z")
-
 
