@@ -15,13 +15,13 @@ from sklearn.tree import DecisionTreeClassifier
 # Main Function
 if __name__ == "__main__":
 
-    # Load dataset
+    # Load dataset from the selected file
     my_dataset = read_csv("labelled_dataset.csv")
     label_obj = my_dataset["label"]
     data_obj = my_dataset.drop(columns=["label", "time", "total_virtual_memory", "swap_total_memory",
                                         "cpu_min_frequency", "cpu_max_frequency"])
 
-    # Split dataset
+    # Split the dataset
     train_data, test_data, train_label, test_label = train_test_split(data_obj, label_obj, test_size=0.7)
 
     # Choose an algorithm as a classifier
@@ -69,6 +69,6 @@ if __name__ == "__main__":
     # stdout is restored to the terminal
     sys.stdout = sys.__stdout__
     
-    # Save the selected model in a file
+    # Save the selected model in a specific file
     joblib.dump(final_classifier,"classifier2.z")
 

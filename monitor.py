@@ -4,7 +4,7 @@ import psutil
 import pandas as pd
 from datetime import datetime
 
-# Function for Datetime
+# Function for datetime
 def read_time():
     
     time_dict = {}
@@ -33,7 +33,7 @@ def read_cpu_usage():
 
     return cpu_dict
 
-# Function for Virtual Memory
+# Function for virtual memory
 def read_virtual_memory_usage():
     memory = psutil.virtual_memory()
     memory_dict = {}
@@ -44,7 +44,7 @@ def read_virtual_memory_usage():
 
     return memory_dict
 
-# Function for Swap Memory
+# Function for the swap memory
 def read_swap_memory_usage():
     memory = psutil.swap_memory()
     memory_dict = {}
@@ -56,7 +56,7 @@ def read_swap_memory_usage():
 
     return memory_dict
 
-# Function for Battery
+# Function for the battery
 def read_battery_information():
     battery = psutil.sensors_battery()
     battery_dict = {}
@@ -66,6 +66,17 @@ def read_battery_information():
     
     return battery_dict
 
+# Function for the generation of a datapoint of tha dataset
+def generate_datapoint():
+    dict = read_time()
+    dict.update(read_cpu_usage())
+    dict.update(read_virtual_memory_usage())
+    dict.update(read_swap_memory_usage())
+    dict.update(read_battery_information())
+
+    return dict
+
+# Function to save the dataset in a csv file
 def write_dict_to_csv(filename, dict_file, first_time):
     if first_time:
         file = open(filename,  'w+', newline="") 
@@ -80,21 +91,12 @@ def write_dict_to_csv(filename, dict_file, first_time):
     writer.writerow(dict_file)
     file.close()   
 
-def generate_datapoint():
-    dict = read_time()
-    dict.update(read_cpu_usage())
-    dict.update(read_virtual_memory_usage())
-    dict.update(read_swap_memory_usage())
-    dict.update(read_battery_information())
-
-    return dict
-
-# Function for Excel File (for better visualization of the dataset)
+# Function to convert the csv file in an excel file, for better visualization of the dataset)
 def generate_excel():
     # Load file CSV
     new_file = pd.read_csv("labelled_dataset.csv")
 
-    # Save file in Excel format
+    # Save file in Excel Format
     new_file.to_excel("labelled_dataset.xlsx", index = False)
     
 # Main Function
@@ -109,5 +111,5 @@ if __name__ == "__main__":
             print(dict,"\n")
             sleep(1)
     except KeyboardInterrupt:
-        generate_excel() # Creation of the relative excel file for a better visualization of the dataset
+        generate_excel()
         print("\nMonitoring aimed for the training of the model terminated!\n")

@@ -7,6 +7,7 @@ import sys
 IP_ADDR = "127.0.0.1"
 PORT = 12345
 
+# Function to write the monitored data and the associated label in a txt file
 def write_to_txt(filename, classifier_name, dict, label, first_time):
     if first_time:
         file = open(filename,  'w+', newline="") 
@@ -18,10 +19,9 @@ def write_to_txt(filename, classifier_name, dict, label, first_time):
 
     file.close() 
 
-
-first_time = True
 # Main Function
 if __name__ == "__main__":
+    first_time = True
 
     # The classifier selected after training is loaded from the file
     classifier = joblib.load("classifier1.z")
@@ -38,7 +38,7 @@ if __name__ == "__main__":
             break
         print("Connection failed")
 
-    # With the while-instruction the runtime classifier stays receiving datapoints
+    # With the while-instruction the runtime classifier keeps receiving datapoints
     previous_dict = {}
     while True:
         # Receive data from the server
@@ -47,11 +47,10 @@ if __name__ == "__main__":
             received_dict = json.loads(data.decode("utf-8"))
             print("Dictionary received:", received_dict, "\n")
 
-        # the condition is satisfied when the runtime_monitor is stopped
+        # The condition is satisfied when the runtime_monitor is stopped
         if received_dict == previous_dict:
             # Close the connection
             sock.close()
-
             print("Runtime detection terminated!\n")
             sys.exit(0)
 

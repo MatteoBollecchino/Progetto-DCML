@@ -26,7 +26,7 @@ def read_cpu_usage():
 
     return cpu_dict
 
-# Function for Virtual Memory
+# Function for virtual memory
 def read_virtual_memory_usage():
     memory = psutil.virtual_memory()
     memory_dict = {}
@@ -36,7 +36,7 @@ def read_virtual_memory_usage():
 
     return memory_dict
 
-# Function for Swap Memory
+# Function for swap memory
 def read_swap_memory_usage():
     memory = psutil.swap_memory()
     memory_dict = {}
@@ -47,7 +47,7 @@ def read_swap_memory_usage():
 
     return memory_dict
 
-# Function for Battery
+# Function for battery
 def read_battery_information():
     battery = psutil.sensors_battery()
     battery_dict = {}
@@ -57,6 +57,7 @@ def read_battery_information():
     
     return battery_dict 
 
+# Function for the generation of a datapoint, to be analyzed from the runtime_detector
 def generate_datapoint():
     dict = read_cpu_usage()
     dict.update(read_virtual_memory_usage())
@@ -65,17 +66,18 @@ def generate_datapoint():
 
     return dict
 
+# Function to monitor the system and send the datapoints to the runtime_detector
 def runtime_monitoring():
     # Create a socket object
     sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
-    # Bind the socket to an address and port
+    # Bind the socket to an address and a port
     sock.bind((IP_ADDR, PORT))
 
-    # Listen for incoming connections
+    # Listen for the incoming connection of the runtime_detector
     sock.listen()
 
-    # Accept a connection from the client
+    # Accept the connection from the runtime_detector
     connection, addr = sock.accept()
     print("Got connection from", addr, "\n")
 

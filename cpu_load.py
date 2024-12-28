@@ -1,18 +1,18 @@
 import multiprocessing
 import time
 
-# Function that simulates heavy CPU load performing infinite calculations to keep the core busy.
+# Function that simulates heavy CPU load performing infinite calculations to keep the core busy
 def intensive_work():
     
     while True:
-        _ = sum(i * i for i in range(10**1))  # Intensive calculation
+        _ = sum(i * i for i in range(10**1))
 
 # Function that starts multiple processes to generate significant CPU load.
 def generate_cpu_load(num_processes=None):
     
     # num_processes = None -> All the cores are used
     if num_processes is None:
-        num_processes = multiprocessing.cpu_count() - 1  # High number of cores
+        num_processes = multiprocessing.cpu_count() - 1  # High number of cores is considered
 
     print("Generating CPU load on", num_processes, "cores...")
     processes = []
