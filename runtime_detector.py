@@ -1,7 +1,7 @@
 import joblib
 import socket
 import json
-import pandas as pd
+from pandas import DataFrame
 import sys
 
 IP_ADDR = "127.0.0.1"
@@ -57,7 +57,7 @@ if __name__ == "__main__":
         previous_dict = received_dict
 
         # The received dictionary is transformed in a bidimensional array
-        test_dict = pd.DataFrame([received_dict])
+        test_dict = DataFrame([received_dict])
         print(test_dict, "\n")
 
         # The model defines the label associated to the datapoint 

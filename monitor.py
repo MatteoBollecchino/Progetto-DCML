@@ -1,7 +1,7 @@
-import csv
+from csv import DictWriter
 from time import sleep
 import psutil
-import pandas as pd
+from pandas import read_csv
 from datetime import datetime
 
 # Function for datetime
@@ -83,7 +83,7 @@ def write_dict_to_csv(filename, dict_file, first_time):
     else:
         file = open(filename,  'a', newline="")
 
-    writer = csv.DictWriter(file, dict_file.keys())
+    writer = DictWriter(file, dict_file.keys())
 
     if first_time:
         writer.writeheader()
@@ -91,10 +91,10 @@ def write_dict_to_csv(filename, dict_file, first_time):
     writer.writerow(dict_file)
     file.close()   
 
-# Function to convert the csv file in an excel file, for better visualization of the dataset)
+# Function to convert the csv file in an excel file, for a better visualization of the dataset
 def generate_excel():
     # Load file CSV
-    new_file = pd.read_csv("labelled_dataset.csv")
+    new_file = read_csv("labelled_dataset.csv")
 
     # Save file in Excel Format
     new_file.to_excel("labelled_dataset.xlsx", index = False)

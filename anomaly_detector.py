@@ -1,12 +1,10 @@
 import joblib
-import sklearn
 import sys
 
 from pandas import read_csv
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.ensemble import RandomForestClassifier, VotingClassifier
-from sklearn.metrics import confusion_matrix, f1_score
-import sklearn.metrics
+from sklearn.metrics import confusion_matrix, f1_score, accuracy_score, matthews_corrcoef
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
@@ -49,8 +47,8 @@ if __name__ == "__main__":
             predicted_labels = clf.predict(test_data)
 
             # Computing metrics to understand how good an algorithm is
-            accuracy = sklearn.metrics.accuracy_score(test_label, predicted_labels)
-            mcc = sklearn.metrics.matthews_corrcoef(test_label, predicted_labels)
+            accuracy = accuracy_score(test_label, predicted_labels)
+            mcc = matthews_corrcoef(test_label, predicted_labels)
             f1score_weighted = f1_score(test_label, predicted_labels, average="weighted")
 
             mcc_list.append(mcc)
@@ -70,5 +68,5 @@ if __name__ == "__main__":
     sys.stdout = sys.__stdout__
     
     # Save the selected model in a specific file
-    joblib.dump(final_classifier,"classifier2.z")
+    # joblib.dump(final_classifier,"classifier2.z")
 
