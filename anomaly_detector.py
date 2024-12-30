@@ -17,7 +17,7 @@ if __name__ == "__main__":
     my_dataset = read_csv("labelled_dataset.csv")
     label_obj = my_dataset["label"]
     data_obj = my_dataset.drop(columns=["label", "time", "total_virtual_memory", "swap_total_memory",
-                                        "cpu_min_frequency", "cpu_max_frequency"])
+                                        "power_plugged", "cpu_min_frequency", "cpu_max_frequency"])
 
     # Split the dataset
     train_data, test_data, train_label, test_label = train_test_split(data_obj, label_obj, test_size=0.7)

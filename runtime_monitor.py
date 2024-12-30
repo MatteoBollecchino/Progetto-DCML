@@ -53,7 +53,6 @@ def read_battery_information():
     battery_dict = {}
 
     battery_dict["battery_percentage"]= battery.percent
-    battery_dict["power_plugged"]= battery.power_plugged
     
     return battery_dict 
 
