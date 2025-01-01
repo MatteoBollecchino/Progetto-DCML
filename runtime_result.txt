@@ -1,81 +1,357 @@
-Runtime Detection Results using RandomForestClassifier
+Runtime Detection Results using VotingClassifier
 
 Datapoint:
-{'cpu_user_time': 26373.296875, 'cpu_idle_time': 1098522.265625, 'cpu_interrupt_time': 706.875, 'cpu_utilization_percentage': 6.8, 'cpu_ctx_switches': 582738961, 'cpu_interrupts': 376445077, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596327884, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.671970367431641, 'virtual_memory_percentage_usage': 63.8, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30182.9375, 'cpu_idle_time': 1533322.640625, 'cpu_interrupt_time': 794.40625, 'cpu_utilization_percentage': 8.3, 'cpu_ctx_switches': 666541405, 'cpu_interrupts': 431647152, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241468270, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.327930450439453, 'virtual_memory_percentage_usage': 59.6, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30183.109375, 'cpu_idle_time': 1533332.96875, 'cpu_interrupt_time': 794.421875, 'cpu_utilization_percentage': 7.1, 'cpu_ctx_switches': 666549985, 'cpu_interrupts': 431652587, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241567424, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.344215393066406, 'virtual_memory_percentage_usage': 59.5, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30183.265625, 'cpu_idle_time': 1533340.765625, 'cpu_interrupt_time': 794.421875, 'cpu_utilization_percentage': 5.2, 'cpu_ctx_switches': 666568146, 'cpu_interrupts': 431662968, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241640963, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.335479736328125, 'virtual_memory_percentage_usage': 59.5, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30183.375, 'cpu_idle_time': 1533348.796875, 'cpu_interrupt_time': 794.4375, 'cpu_utilization_percentage': 3.4, 'cpu_ctx_switches': 666573533, 'cpu_interrupts': 431666221, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241655058, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.337810516357422, 'virtual_memory_percentage_usage': 59.5, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30183.53125, 'cpu_idle_time': 1533356.640625, 'cpu_interrupt_time': 794.4375, 'cpu_utilization_percentage': 4.6, 'cpu_ctx_switches': 666582015, 'cpu_interrupts': 431671268, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241678534, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.341712951660156, 'virtual_memory_percentage_usage': 59.5, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30183.59375, 'cpu_idle_time': 1533364.65625, 'cpu_interrupt_time': 794.4375, 'cpu_utilization_percentage': 3.0, 'cpu_ctx_switches': 666585881, 'cpu_interrupts': 431673458, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241689353, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.351005554199219, 'virtual_memory_percentage_usage': 59.4, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30183.828125, 'cpu_idle_time': 1533372.5625, 'cpu_interrupt_time': 794.4375, 'cpu_utilization_percentage': 4.9, 'cpu_ctx_switches': 666593741, 'cpu_interrupts': 431678082, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241715497, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.354522705078125, 'virtual_memory_percentage_usage': 59.4, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30184.15625, 'cpu_idle_time': 1533379.953125, 'cpu_interrupt_time': 794.4375, 'cpu_utilization_percentage': 9.6, 'cpu_ctx_switches': 666611099, 'cpu_interrupts': 431688099, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241792310, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.334083557128906, 'virtual_memory_percentage_usage': 59.5, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30184.375, 'cpu_idle_time': 1533387.8125, 'cpu_interrupt_time': 794.453125, 'cpu_utilization_percentage': 5.6, 'cpu_ctx_switches': 666628282, 'cpu_interrupts': 431698437, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241831726, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.341426849365234, 'virtual_memory_percentage_usage': 59.5, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30184.546875, 'cpu_idle_time': 1533395.578125, 'cpu_interrupt_time': 794.46875, 'cpu_utilization_percentage': 5.8, 'cpu_ctx_switches': 666643375, 'cpu_interrupts': 431707221, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241866854, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.349761962890625, 'virtual_memory_percentage_usage': 59.4, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30184.984375, 'cpu_idle_time': 1533402.84375, 'cpu_interrupt_time': 794.546875, 'cpu_utilization_percentage': 11.7, 'cpu_ctx_switches': 666656121, 'cpu_interrupts': 431715051, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241895393, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.35137939453125, 'virtual_memory_percentage_usage': 59.4, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30185.109375, 'cpu_idle_time': 1533410.796875, 'cpu_interrupt_time': 794.546875, 'cpu_utilization_percentage': 4.0, 'cpu_ctx_switches': 666668475, 'cpu_interrupts': 431722257, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3241923338, 'cpu_current_frequency': 998.0, 'available_virtual_memory': 6.351993560791016, 'virtual_memory_percentage_usage': 59.4, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30185.3125, 'cpu_idle_time': 1533418.53125, 'cpu_interrupt_time': 794.5625, 'cpu_utilization_percentage': 6.8, 'cpu_ctx_switches': 666688415, 'cpu_interrupts': 431733792, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242003931, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.351306915283203, 'virtual_memory_percentage_usage': 59.4, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30185.84375, 'cpu_idle_time': 1533425.828125, 'cpu_interrupt_time': 794.5625, 'cpu_utilization_percentage': 12.2, 'cpu_ctx_switches': 666707998, 'cpu_interrupts': 431744994, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242077568, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.334239959716797, 'virtual_memory_percentage_usage': 59.5, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30186.28125, 'cpu_idle_time': 1533433.203125, 'cpu_interrupt_time': 794.5625, 'cpu_utilization_percentage': 10.2, 'cpu_ctx_switches': 666721008, 'cpu_interrupts': 431752770, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242113092, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.331428527832031, 'virtual_memory_percentage_usage': 59.5, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30187.40625, 'cpu_idle_time': 1533439.703125, 'cpu_interrupt_time': 794.59375, 'cpu_utilization_percentage': 22.7, 'cpu_ctx_switches': 666749306, 'cpu_interrupts': 431770225, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242320116, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.236774444580078, 'virtual_memory_percentage_usage': 60.2, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30193.859375, 'cpu_idle_time': 1533441.015625, 'cpu_interrupt_time': 794.59375, 'cpu_utilization_percentage': 84.2, 'cpu_ctx_switches': 666762309, 'cpu_interrupts': 431792692, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242351221, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.231395721435547, 'virtual_memory_percentage_usage': 60.2, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26373.625, 'cpu_idle_time': 1098534.15625, 'cpu_interrupt_time': 706.875, 'cpu_utilization_percentage': 6.4, 'cpu_ctx_switches': 582750459, 'cpu_interrupts': 376452630, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596423054, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.657112121582031, 'virtual_memory_percentage_usage': 63.9, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30201.0625, 'cpu_idle_time': 1533441.5, 'cpu_interrupt_time': 794.625, 'cpu_utilization_percentage': 94.3, 'cpu_ctx_switches': 666772975, 'cpu_interrupts': 431812555, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242416586, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.225921630859375, 'virtual_memory_percentage_usage': 60.2, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26373.8125, 'cpu_idle_time': 1098541.828125, 'cpu_interrupt_time': 706.875, 'cpu_utilization_percentage': 5.9, 'cpu_ctx_switches': 582762563, 'cpu_interrupts': 376461500, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596483713, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.648441314697266, 'virtual_memory_percentage_usage': 63.9, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30208.1875, 'cpu_idle_time': 1533442.40625, 'cpu_interrupt_time': 794.671875, 'cpu_utilization_percentage': 89.1, 'cpu_ctx_switches': 666788813, 'cpu_interrupts': 431819982, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242467141, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.246295928955078, 'virtual_memory_percentage_usage': 60.1, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26373.953125, 'cpu_idle_time': 1098549.875, 'cpu_interrupt_time': 706.875, 'cpu_utilization_percentage': 3.2, 'cpu_ctx_switches': 582766171, 'cpu_interrupts': 376463680, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596493635, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.640892028808594, 'virtual_memory_percentage_usage': 64.0, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30214.921875, 'cpu_idle_time': 1533443.828125, 'cpu_interrupt_time': 794.671875, 'cpu_utilization_percentage': 83.5, 'cpu_ctx_switches': 666799358, 'cpu_interrupts': 431825409, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242497794, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.239295959472656, 'virtual_memory_percentage_usage': 60.1, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26374.09375, 'cpu_idle_time': 1098557.640625, 'cpu_interrupt_time': 706.875, 'cpu_utilization_percentage': 5.0, 'cpu_ctx_switches': 582770151, 'cpu_interrupts': 376466261, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596503683, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.654743194580078, 'virtual_memory_percentage_usage': 63.9, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30221.421875, 'cpu_idle_time': 1533445.1875, 'cpu_interrupt_time': 794.671875, 'cpu_utilization_percentage': 83.2, 'cpu_ctx_switches': 666806924, 'cpu_interrupts': 431831041, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242519883, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.2409820556640625, 'virtual_memory_percentage_usage': 60.1, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26374.15625, 'cpu_idle_time': 1098565.734375, 'cpu_interrupt_time': 706.875, 'cpu_utilization_percentage': 2.3, 'cpu_ctx_switches': 582773650, 'cpu_interrupts': 376468461, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596513186, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.653312683105469, 'virtual_memory_percentage_usage': 63.9, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30227.984375, 'cpu_idle_time': 1533446.515625, 'cpu_interrupt_time': 794.6875, 'cpu_utilization_percentage': 84.1, 'cpu_ctx_switches': 666816624, 'cpu_interrupts': 431836833, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242546913, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.243595123291016, 'virtual_memory_percentage_usage': 60.1, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26374.28125, 'cpu_idle_time': 1098573.296875, 'cpu_interrupt_time': 706.875, 'cpu_utilization_percentage': 10.0, 'cpu_ctx_switches': 582777881, 'cpu_interrupts': 376481907, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596527597, 'cpu_current_frequency': 998.0, 'available_virtual_memory': 5.670421600341797, 'virtual_memory_percentage_usage': 63.8, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30235.375, 'cpu_idle_time': 1533447.3125, 'cpu_interrupt_time': 794.703125, 'cpu_utilization_percentage': 91.1, 'cpu_ctx_switches': 666833146, 'cpu_interrupts': 431843963, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242622404, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.2382049560546875, 'virtual_memory_percentage_usage': 60.1, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26374.46875, 'cpu_idle_time': 1098580.5625, 'cpu_interrupt_time': 706.875, 'cpu_utilization_percentage': 10.4, 'cpu_ctx_switches': 582788694, 'cpu_interrupts': 376492786, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596590024, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.670246124267578, 'virtual_memory_percentage_usage': 63.8, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30242.609375, 'cpu_idle_time': 1533448.234375, 'cpu_interrupt_time': 794.703125, 'cpu_utilization_percentage': 89.4, 'cpu_ctx_switches': 666849400, 'cpu_interrupts': 431854376, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242681309, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.247737884521484, 'virtual_memory_percentage_usage': 60.1, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26374.59375, 'cpu_idle_time': 1098587.890625, 'cpu_interrupt_time': 706.890625, 'cpu_utilization_percentage': 10.0, 'cpu_ctx_switches': 582792113, 'cpu_interrupts': 376496904, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596597959, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.673469543457031, 'virtual_memory_percentage_usage': 63.8, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30249.25, 'cpu_idle_time': 1533449.71875, 'cpu_interrupt_time': 794.71875, 'cpu_utilization_percentage': 82.4, 'cpu_ctx_switches': 666858850, 'cpu_interrupts': 431860080, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242709233, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.249847412109375, 'virtual_memory_percentage_usage': 60.1, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26374.6875, 'cpu_idle_time': 1098595.15625, 'cpu_interrupt_time': 706.9375, 'cpu_utilization_percentage': 11.3, 'cpu_ctx_switches': 582795467, 'cpu_interrupts': 376501819, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596606814, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.674530029296875, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30255.46875, 'cpu_idle_time': 1533451.5, 'cpu_interrupt_time': 794.75, 'cpu_utilization_percentage': 78.8, 'cpu_ctx_switches': 666868199, 'cpu_interrupts': 431867228, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242735406, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.247398376464844, 'virtual_memory_percentage_usage': 60.1, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26374.96875, 'cpu_idle_time': 1098602.40625, 'cpu_interrupt_time': 706.9375, 'cpu_utilization_percentage': 12.6, 'cpu_ctx_switches': 582799505, 'cpu_interrupts': 376507162, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596616926, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.677032470703125, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30259.53125, 'cpu_idle_time': 1533455.34375, 'cpu_interrupt_time': 794.765625, 'cpu_utilization_percentage': 52.7, 'cpu_ctx_switches': 666875125, 'cpu_interrupts': 431872007, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242758760, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.315181732177734, 'virtual_memory_percentage_usage': 59.7, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26375.015625, 'cpu_idle_time': 1098609.59375, 'cpu_interrupt_time': 706.953125, 'cpu_utilization_percentage': 11.2, 'cpu_ctx_switches': 582802987, 'cpu_interrupts': 376512529, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596629741, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.6787261962890625, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30259.6875, 'cpu_idle_time': 1533463.25, 'cpu_interrupt_time': 794.78125, 'cpu_utilization_percentage': 4.7, 'cpu_ctx_switches': 666881292, 'cpu_interrupts': 431875699, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242787072, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.302375793457031, 'virtual_memory_percentage_usage': 59.7, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30259.890625, 'cpu_idle_time': 1533470.984375, 'cpu_interrupt_time': 794.78125, 'cpu_utilization_percentage': 5.9, 'cpu_ctx_switches': 666894165, 'cpu_interrupts': 431882672, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242855985, 'cpu_current_frequency': 998.0, 'available_virtual_memory': 6.303211212158203, 'virtual_memory_percentage_usage': 59.7, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30260.015625, 'cpu_idle_time': 1533478.921875, 'cpu_interrupt_time': 794.78125, 'cpu_utilization_percentage': 3.4, 'cpu_ctx_switches': 666898762, 'cpu_interrupts': 431885059, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242869141, 'cpu_current_frequency': 998.0, 'available_virtual_memory': 6.298866271972656, 'virtual_memory_percentage_usage': 59.8, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30260.421875, 'cpu_idle_time': 1533486.640625, 'cpu_interrupt_time': 794.78125, 'cpu_utilization_percentage': 7.7, 'cpu_ctx_switches': 666906684, 'cpu_interrupts': 431889469, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242893872, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.309986114501953, 'virtual_memory_percentage_usage': 59.7, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30260.640625, 'cpu_idle_time': 1533494.34375, 'cpu_interrupt_time': 794.796875, 'cpu_utilization_percentage': 6.8, 'cpu_ctx_switches': 666919435, 'cpu_interrupts': 431897225, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242939633, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.3250885009765625, 'virtual_memory_percentage_usage': 59.6, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30260.765625, 'cpu_idle_time': 1533502.328125, 'cpu_interrupt_time': 794.8125, 'cpu_utilization_percentage': 4.5, 'cpu_ctx_switches': 666933734, 'cpu_interrupts': 431905649, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3242974319, 'cpu_current_frequency': 998.0, 'available_virtual_memory': 6.326282501220703, 'virtual_memory_percentage_usage': 59.6, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30261.203125, 'cpu_idle_time': 1533509.546875, 'cpu_interrupt_time': 794.8125, 'cpu_utilization_percentage': 11.1, 'cpu_ctx_switches': 666955375, 'cpu_interrupts': 431917830, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243089573, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.303436279296875, 'virtual_memory_percentage_usage': 59.7, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30262.0, 'cpu_idle_time': 1533516.953125, 'cpu_interrupt_time': 794.8125, 'cpu_utilization_percentage': 11.9, 'cpu_ctx_switches': 666969086, 'cpu_interrupts': 431925685, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243123909, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.317134857177734, 'virtual_memory_percentage_usage': 59.6, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30262.109375, 'cpu_idle_time': 1533524.765625, 'cpu_interrupt_time': 794.8125, 'cpu_utilization_percentage': 2.7, 'cpu_ctx_switches': 666978335, 'cpu_interrupts': 431931126, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243146454, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.312465667724609, 'virtual_memory_percentage_usage': 59.7, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30262.359375, 'cpu_idle_time': 1533532.71875, 'cpu_interrupt_time': 794.8125, 'cpu_utilization_percentage': 4.9, 'cpu_ctx_switches': 666988647, 'cpu_interrupts': 431937227, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243184090, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.2990570068359375, 'virtual_memory_percentage_usage': 59.8, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30262.703125, 'cpu_idle_time': 1533540.1875, 'cpu_interrupt_time': 794.8125, 'cpu_utilization_percentage': 7.0, 'cpu_ctx_switches': 667009764, 'cpu_interrupts': 431949689, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243334165, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.072795867919922, 'virtual_memory_percentage_usage': 61.2, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30263.765625, 'cpu_idle_time': 1533546.859375, 'cpu_interrupt_time': 794.84375, 'cpu_utilization_percentage': 20.2, 'cpu_ctx_switches': 667032677, 'cpu_interrupts': 431961600, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243460237, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.857959747314453, 'virtual_memory_percentage_usage': 62.6, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30264.296875, 'cpu_idle_time': 1533554.234375, 'cpu_interrupt_time': 794.875, 'cpu_utilization_percentage': 12.3, 'cpu_ctx_switches': 667045704, 'cpu_interrupts': 431969310, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243523590, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.668998718261719, 'virtual_memory_percentage_usage': 63.8, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30264.484375, 'cpu_idle_time': 1533561.828125, 'cpu_interrupt_time': 794.875, 'cpu_utilization_percentage': 5.8, 'cpu_ctx_switches': 667058232, 'cpu_interrupts': 431977200, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243550324, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.479179382324219, 'virtual_memory_percentage_usage': 65.0, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30264.578125, 'cpu_idle_time': 1533569.625, 'cpu_interrupt_time': 794.875, 'cpu_utilization_percentage': 7.8, 'cpu_ctx_switches': 667067140, 'cpu_interrupts': 431982483, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243572523, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.394412994384766, 'virtual_memory_percentage_usage': 65.5, 'swap_available_memory': 6.629711151123047, 'swap_used_memory': 0.8702888488769531, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26375.28125, 'cpu_idle_time': 1098616.71875, 'cpu_interrupt_time': 706.953125, 'cpu_utilization_percentage': 13.5, 'cpu_ctx_switches': 582812595, 'cpu_interrupts': 376521248, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596690514, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.679485321044922, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30265.171875, 'cpu_idle_time': 1533576.796875, 'cpu_interrupt_time': 794.90625, 'cpu_utilization_percentage': 15.5, 'cpu_ctx_switches': 667100097, 'cpu_interrupts': 431999928, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243594189, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.292335510253906, 'virtual_memory_percentage_usage': 66.2, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26375.453125, 'cpu_idle_time': 1098624.09375, 'cpu_interrupt_time': 706.96875, 'cpu_utilization_percentage': 10.6, 'cpu_ctx_switches': 582816261, 'cpu_interrupts': 376526042, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596702579, 'cpu_current_frequency': 998.0, 'available_virtual_memory': 5.683341979980469, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30265.515625, 'cpu_idle_time': 1533583.90625, 'cpu_interrupt_time': 794.921875, 'cpu_utilization_percentage': 14.2, 'cpu_ctx_switches': 667139840, 'cpu_interrupts': 432021352, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243661036, 'cpu_current_frequency': 998.0, 'available_virtual_memory': 5.189788818359375, 'virtual_memory_percentage_usage': 66.8, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26375.625, 'cpu_idle_time': 1098631.28125, 'cpu_interrupt_time': 706.96875, 'cpu_utilization_percentage': 11.7, 'cpu_ctx_switches': 582820124, 'cpu_interrupts': 376530975, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596712122, 'cpu_current_frequency': 998.0, 'available_virtual_memory': 5.688877105712891, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30265.703125, 'cpu_idle_time': 1533591.53125, 'cpu_interrupt_time': 794.921875, 'cpu_utilization_percentage': 7.6, 'cpu_ctx_switches': 667169959, 'cpu_interrupts': 432037315, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243683070, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.047962188720703, 'virtual_memory_percentage_usage': 67.7, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26375.6875, 'cpu_idle_time': 1098639.203125, 'cpu_interrupt_time': 706.96875, 'cpu_utilization_percentage': 2.1, 'cpu_ctx_switches': 582823602, 'cpu_interrupts': 376533273, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596721253, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.6876678466796875, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30265.71875, 'cpu_idle_time': 1533599.5625, 'cpu_interrupt_time': 794.9375, 'cpu_utilization_percentage': 3.0, 'cpu_ctx_switches': 667175022, 'cpu_interrupts': 432040378, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243696091, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.8548583984375, 'virtual_memory_percentage_usage': 69.0, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26375.734375, 'cpu_idle_time': 1098647.234375, 'cpu_interrupt_time': 706.96875, 'cpu_utilization_percentage': 2.3, 'cpu_ctx_switches': 582828010, 'cpu_interrupts': 376536107, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596736622, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.6871337890625, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30265.828125, 'cpu_idle_time': 1533607.59375, 'cpu_interrupt_time': 794.9375, 'cpu_utilization_percentage': 2.5, 'cpu_ctx_switches': 667181074, 'cpu_interrupts': 432043810, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243713715, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.709297180175781, 'virtual_memory_percentage_usage': 69.9, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26376.140625, 'cpu_idle_time': 1098654.65625, 'cpu_interrupt_time': 706.984375, 'cpu_utilization_percentage': 10.9, 'cpu_ctx_switches': 582843626, 'cpu_interrupts': 376544906, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596814695, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.6826171875, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30266.046875, 'cpu_idle_time': 1533615.265625, 'cpu_interrupt_time': 794.953125, 'cpu_utilization_percentage': 6.1, 'cpu_ctx_switches': 667190524, 'cpu_interrupts': 432049418, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243738541, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.62493896484375, 'virtual_memory_percentage_usage': 70.5, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26376.28125, 'cpu_idle_time': 1098662.609375, 'cpu_interrupt_time': 706.984375, 'cpu_utilization_percentage': 3.0, 'cpu_ctx_switches': 582850336, 'cpu_interrupts': 376548730, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596832195, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.682090759277344, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30266.34375, 'cpu_idle_time': 1533622.8125, 'cpu_interrupt_time': 794.953125, 'cpu_utilization_percentage': 7.5, 'cpu_ctx_switches': 667203992, 'cpu_interrupts': 432057249, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243811044, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.450504302978516, 'virtual_memory_percentage_usage': 71.6, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
 
 Datapoint:
-{'cpu_user_time': 26376.390625, 'cpu_idle_time': 1098670.375, 'cpu_interrupt_time': 707.0, 'cpu_utilization_percentage': 4.6, 'cpu_ctx_switches': 582858290, 'cpu_interrupts': 376553275, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 2596853220, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.681644439697266, 'virtual_memory_percentage_usage': 63.7, 'swap_available_memory': 7.246578216552734, 'swap_used_memory': 0.2534217834472656, 'swap_memory_percentage_usage': 3.4, 'battery_percentage': 87}
+{'cpu_user_time': 30266.5, 'cpu_idle_time': 1533630.6875, 'cpu_interrupt_time': 794.953125, 'cpu_utilization_percentage': 4.9, 'cpu_ctx_switches': 667217111, 'cpu_interrupts': 432065237, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243844214, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.271518707275391, 'virtual_memory_percentage_usage': 72.7, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
 Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30266.671875, 'cpu_idle_time': 1533638.609375, 'cpu_interrupt_time': 794.96875, 'cpu_utilization_percentage': 4.2, 'cpu_ctx_switches': 667226338, 'cpu_interrupts': 432070440, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243866647, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.07403564453125, 'virtual_memory_percentage_usage': 74.0, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30266.703125, 'cpu_idle_time': 1533646.609375, 'cpu_interrupt_time': 794.984375, 'cpu_utilization_percentage': 3.9, 'cpu_ctx_switches': 667234886, 'cpu_interrupts': 432075644, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243885544, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 3.874561309814453, 'virtual_memory_percentage_usage': 75.2, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30266.8125, 'cpu_idle_time': 1533654.46875, 'cpu_interrupt_time': 795.0, 'cpu_utilization_percentage': 4.4, 'cpu_ctx_switches': 667245267, 'cpu_interrupts': 432081281, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243913785, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 3.681671142578125, 'virtual_memory_percentage_usage': 76.5, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30267.015625, 'cpu_idle_time': 1533662.1875, 'cpu_interrupt_time': 795.015625, 'cpu_utilization_percentage': 6.8, 'cpu_ctx_switches': 667257666, 'cpu_interrupts': 432088433, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3243985336, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 3.4850730895996094, 'virtual_memory_percentage_usage': 77.7, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30267.203125, 'cpu_idle_time': 1533669.765625, 'cpu_interrupt_time': 795.046875, 'cpu_utilization_percentage': 9.5, 'cpu_ctx_switches': 667266603, 'cpu_interrupts': 432093321, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244017344, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.6092376708984375, 'virtual_memory_percentage_usage': 57.8, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30267.5, 'cpu_idle_time': 1533677.625, 'cpu_interrupt_time': 795.0625, 'cpu_utilization_percentage': 5.3, 'cpu_ctx_switches': 667277831, 'cpu_interrupts': 432100208, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244042268, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.602352142333984, 'virtual_memory_percentage_usage': 57.8, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30267.96875, 'cpu_idle_time': 1533685.109375, 'cpu_interrupt_time': 795.0625, 'cpu_utilization_percentage': 7.9, 'cpu_ctx_switches': 667285142, 'cpu_interrupts': 432105235, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244057770, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.603759765625, 'virtual_memory_percentage_usage': 57.8, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30268.390625, 'cpu_idle_time': 1533692.796875, 'cpu_interrupt_time': 795.0625, 'cpu_utilization_percentage': 8.0, 'cpu_ctx_switches': 667296688, 'cpu_interrupts': 432112123, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244088644, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.628467559814453, 'virtual_memory_percentage_usage': 57.7, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30268.53125, 'cpu_idle_time': 1533700.671875, 'cpu_interrupt_time': 795.0625, 'cpu_utilization_percentage': 4.7, 'cpu_ctx_switches': 667312179, 'cpu_interrupts': 432121069, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244156771, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.61700439453125, 'virtual_memory_percentage_usage': 57.7, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30268.625, 'cpu_idle_time': 1533708.515625, 'cpu_interrupt_time': 795.078125, 'cpu_utilization_percentage': 3.7, 'cpu_ctx_switches': 667323686, 'cpu_interrupts': 432128176, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244192073, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.630931854248047, 'virtual_memory_percentage_usage': 57.6, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30269.015625, 'cpu_idle_time': 1533716.0625, 'cpu_interrupt_time': 795.125, 'cpu_utilization_percentage': 9.7, 'cpu_ctx_switches': 667343387, 'cpu_interrupts': 432139438, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244257019, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.5965576171875, 'virtual_memory_percentage_usage': 57.9, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30269.140625, 'cpu_idle_time': 1533724.0, 'cpu_interrupt_time': 795.140625, 'cpu_utilization_percentage': 5.9, 'cpu_ctx_switches': 667358258, 'cpu_interrupts': 432148517, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244295182, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.603179931640625, 'virtual_memory_percentage_usage': 57.8, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30273.40625, 'cpu_idle_time': 1533728.234375, 'cpu_interrupt_time': 795.171875, 'cpu_utilization_percentage': 54.5, 'cpu_ctx_switches': 667388490, 'cpu_interrupts': 432173934, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244400657, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.547801971435547, 'virtual_memory_percentage_usage': 58.2, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30281.0, 'cpu_idle_time': 1533728.390625, 'cpu_interrupt_time': 795.203125, 'cpu_utilization_percentage': 98.2, 'cpu_ctx_switches': 667408901, 'cpu_interrupts': 432199342, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244500760, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.546943664550781, 'virtual_memory_percentage_usage': 58.2, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30288.421875, 'cpu_idle_time': 1533729.203125, 'cpu_interrupt_time': 795.25, 'cpu_utilization_percentage': 91.0, 'cpu_ctx_switches': 667431684, 'cpu_interrupts': 432213710, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244567463, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.348167419433594, 'virtual_memory_percentage_usage': 59.4, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30295.171875, 'cpu_idle_time': 1533730.28125, 'cpu_interrupt_time': 795.265625, 'cpu_utilization_percentage': 87.4, 'cpu_ctx_switches': 667442342, 'cpu_interrupts': 432222510, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244627476, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.1484222412109375, 'virtual_memory_percentage_usage': 60.7, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30301.671875, 'cpu_idle_time': 1533731.65625, 'cpu_interrupt_time': 795.28125, 'cpu_utilization_percentage': 83.6, 'cpu_ctx_switches': 667453569, 'cpu_interrupts': 432230592, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244658182, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.957485198974609, 'virtual_memory_percentage_usage': 61.9, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 86}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30308.515625, 'cpu_idle_time': 1533732.734375, 'cpu_interrupt_time': 795.296875, 'cpu_utilization_percentage': 87.1, 'cpu_ctx_switches': 667463783, 'cpu_interrupts': 432237583, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244691667, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.763572692871094, 'virtual_memory_percentage_usage': 63.2, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30315.765625, 'cpu_idle_time': 1533733.890625, 'cpu_interrupt_time': 795.3125, 'cpu_utilization_percentage': 89.1, 'cpu_ctx_switches': 667479676, 'cpu_interrupts': 432249776, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244752772, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.558956146240234, 'virtual_memory_percentage_usage': 64.5, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30323.921875, 'cpu_idle_time': 1533735.046875, 'cpu_interrupt_time': 795.328125, 'cpu_utilization_percentage': 86.6, 'cpu_ctx_switches': 667492929, 'cpu_interrupts': 432258523, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244808886, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.361339569091797, 'virtual_memory_percentage_usage': 65.7, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30330.53125, 'cpu_idle_time': 1533736.578125, 'cpu_interrupt_time': 795.375, 'cpu_utilization_percentage': 82.0, 'cpu_ctx_switches': 667504193, 'cpu_interrupts': 432266743, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244835198, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 5.174503326416016, 'virtual_memory_percentage_usage': 66.9, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30337.265625, 'cpu_idle_time': 1533737.859375, 'cpu_interrupt_time': 795.375, 'cpu_utilization_percentage': 85.1, 'cpu_ctx_switches': 667519740, 'cpu_interrupts': 432277383, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244896186, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.972354888916016, 'virtual_memory_percentage_usage': 68.2, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30343.84375, 'cpu_idle_time': 1533739.125, 'cpu_interrupt_time': 795.453125, 'cpu_utilization_percentage': 85.2, 'cpu_ctx_switches': 667532487, 'cpu_interrupts': 432283460, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244933313, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.793308258056641, 'virtual_memory_percentage_usage': 69.4, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30350.734375, 'cpu_idle_time': 1533740.09375, 'cpu_interrupt_time': 795.53125, 'cpu_utilization_percentage': 89.0, 'cpu_ctx_switches': 667545420, 'cpu_interrupts': 432292231, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3244969363, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.598838806152344, 'virtual_memory_percentage_usage': 70.6, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30358.625, 'cpu_idle_time': 1533740.109375, 'cpu_interrupt_time': 795.53125, 'cpu_utilization_percentage': 99.8, 'cpu_ctx_switches': 667561521, 'cpu_interrupts': 432302002, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245048586, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.393058776855469, 'virtual_memory_percentage_usage': 71.9, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30362.5, 'cpu_idle_time': 1533744.484375, 'cpu_interrupt_time': 795.53125, 'cpu_utilization_percentage': 49.1, 'cpu_ctx_switches': 667570499, 'cpu_interrupts': 432306984, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245081011, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.265789031982422, 'virtual_memory_percentage_usage': 72.7, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30362.65625, 'cpu_idle_time': 1533752.515625, 'cpu_interrupt_time': 795.546875, 'cpu_utilization_percentage': 4.3, 'cpu_ctx_switches': 667584243, 'cpu_interrupts': 432315203, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245113711, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 4.076793670654297, 'virtual_memory_percentage_usage': 74.0, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30362.78125, 'cpu_idle_time': 1533760.421875, 'cpu_interrupt_time': 795.546875, 'cpu_utilization_percentage': 3.1, 'cpu_ctx_switches': 667591801, 'cpu_interrupts': 432319649, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245130237, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 3.8844451904296875, 'virtual_memory_percentage_usage': 75.2, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30362.90625, 'cpu_idle_time': 1533768.390625, 'cpu_interrupt_time': 795.546875, 'cpu_utilization_percentage': 4.0, 'cpu_ctx_switches': 667599620, 'cpu_interrupts': 432324085, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245154738, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 3.6817550659179688, 'virtual_memory_percentage_usage': 76.5, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30363.234375, 'cpu_idle_time': 1533775.515625, 'cpu_interrupt_time': 795.5625, 'cpu_utilization_percentage': 12.8, 'cpu_ctx_switches': 667617100, 'cpu_interrupts': 432334549, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245229107, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 3.523571014404297, 'virtual_memory_percentage_usage': 77.5, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30363.421875, 'cpu_idle_time': 1533783.265625, 'cpu_interrupt_time': 795.5625, 'cpu_utilization_percentage': 5.9, 'cpu_ctx_switches': 667628496, 'cpu_interrupts': 432341419, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245281540, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 3.3348617553710938, 'virtual_memory_percentage_usage': 78.7, 'swap_available_memory': 6.631656646728516, 'swap_used_memory': 0.8683433532714844, 'swap_memory_percentage_usage': 11.6, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30363.609375, 'cpu_idle_time': 1533790.953125, 'cpu_interrupt_time': 795.5625, 'cpu_utilization_percentage': 7.3, 'cpu_ctx_switches': 667643918, 'cpu_interrupts': 432351721, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245309786, 'cpu_current_frequency': 998.0, 'available_virtual_memory': 3.617969512939453, 'virtual_memory_percentage_usage': 76.9, 'swap_available_memory': 6.604400634765625, 'swap_used_memory': 0.895599365234375, 'swap_memory_percentage_usage': 11.9, 'battery_percentage': 85}
+Predicted label: ['anomaly']
+
+Datapoint:
+{'cpu_user_time': 30363.71875, 'cpu_idle_time': 1533798.21875, 'cpu_interrupt_time': 795.578125, 'cpu_utilization_percentage': 10.6, 'cpu_ctx_switches': 667656455, 'cpu_interrupts': 432358921, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245334330, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.717075347900391, 'virtual_memory_percentage_usage': 57.1, 'swap_available_memory': 6.604400634765625, 'swap_used_memory': 0.895599365234375, 'swap_memory_percentage_usage': 11.9, 'battery_percentage': 85}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30364.3125, 'cpu_idle_time': 1533805.59375, 'cpu_interrupt_time': 795.609375, 'cpu_utilization_percentage': 10.9, 'cpu_ctx_switches': 667666404, 'cpu_interrupts': 432365084, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245360882, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.718700408935547, 'virtual_memory_percentage_usage': 57.1, 'swap_available_memory': 6.604400634765625, 'swap_used_memory': 0.895599365234375, 'swap_memory_percentage_usage': 11.9, 'battery_percentage': 85}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30364.640625, 'cpu_idle_time': 1533813.390625, 'cpu_interrupt_time': 795.640625, 'cpu_utilization_percentage': 7.9, 'cpu_ctx_switches': 667675963, 'cpu_interrupts': 432370777, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245421330, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.709423065185547, 'virtual_memory_percentage_usage': 57.1, 'swap_available_memory': 6.604400634765625, 'swap_used_memory': 0.895599365234375, 'swap_memory_percentage_usage': 11.9, 'battery_percentage': 85}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30364.859375, 'cpu_idle_time': 1533821.015625, 'cpu_interrupt_time': 795.671875, 'cpu_utilization_percentage': 6.0, 'cpu_ctx_switches': 667685272, 'cpu_interrupts': 432376177, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245451154, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.720760345458984, 'virtual_memory_percentage_usage': 57.1, 'swap_available_memory': 6.604400634765625, 'swap_used_memory': 0.895599365234375, 'swap_memory_percentage_usage': 11.9, 'battery_percentage': 85}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30364.96875, 'cpu_idle_time': 1533828.96875, 'cpu_interrupt_time': 795.671875, 'cpu_utilization_percentage': 3.0, 'cpu_ctx_switches': 667690582, 'cpu_interrupts': 432379363, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245466067, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.717582702636719, 'virtual_memory_percentage_usage': 57.1, 'swap_available_memory': 6.604400634765625, 'swap_used_memory': 0.895599365234375, 'swap_memory_percentage_usage': 11.9, 'battery_percentage': 85}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30365.0, 'cpu_idle_time': 1533837.0, 'cpu_interrupt_time': 795.671875, 'cpu_utilization_percentage': 1.9, 'cpu_ctx_switches': 667694247, 'cpu_interrupts': 432381400, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245477053, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.7181854248046875, 'virtual_memory_percentage_usage': 57.1, 'swap_available_memory': 6.604400634765625, 'swap_used_memory': 0.895599365234375, 'swap_memory_percentage_usage': 11.9, 'battery_percentage': 85}
+Predicted label: ['normal']
+
+Datapoint:
+{'cpu_user_time': 30365.1875, 'cpu_idle_time': 1533844.9375, 'cpu_interrupt_time': 795.6875, 'cpu_utilization_percentage': 5.2, 'cpu_ctx_switches': 667701725, 'cpu_interrupts': 432385427, 'cpu_soft_interrupts': 0, 'cpu_sys_calls': 3245500779, 'cpu_current_frequency': 2496.0, 'available_virtual_memory': 6.717304229736328, 'virtual_memory_percentage_usage': 57.1, 'swap_available_memory': 6.604400634765625, 'swap_used_memory': 0.895599365234375, 'swap_memory_percentage_usage': 11.9, 'battery_percentage': 85}
+Predicted label: ['normal']

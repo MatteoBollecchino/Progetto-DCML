@@ -1,9 +1,9 @@
 Metrics Results 
 
-VotingClassifier: Accuracy: 0.9845, MCC: 0.9666, F1-score weighted: 0.9845, TP: 244, TN: 138, FN: 3, FP: 3
-DecisionTreeClassifier: Accuracy: 0.9794, MCC: 0.9554, F1-score weighted: 0.9793, TP: 244, TN: 136, FN: 3, FP: 5
-KNeighborsClassifier: Accuracy: 0.9588, MCC: 0.9112, F1-score weighted: 0.9588, TP: 238, TN: 134, FN: 9, FP: 7
-RandomForestClassifier: Accuracy: 0.9871, MCC: 0.9722, F1-score weighted: 0.9871, TP: 244, TN: 139, FN: 3, FP: 2
-RandomForestClassifier: Accuracy: 0.9897, MCC: 0.9777, F1-score weighted: 0.9897, TP: 245, TN: 139, FN: 2, FP: 2
+VotingClassifier: Accuracy: 0.9842, MCC: 0.9683, F1-score weighted: 0.9842, TP: 240, TN: 197, FN: 2, FP: 5
+DecisionTreeClassifier: Accuracy: 0.9752, MCC: 0.9504, F1-score weighted: 0.9752, TP: 240, TN: 193, FN: 2, FP: 9
+KNeighborsClassifier: Accuracy: 0.9414, MCC: 0.8835, F1-score weighted: 0.9412, TP: 237, TN: 181, FN: 5, FP: 21
+RandomForestClassifier: Accuracy: 0.9752, MCC: 0.9504, F1-score weighted: 0.9752, TP: 240, TN: 193, FN: 2, FP: 9
+RandomForestClassifier: Accuracy: 0.9752, MCC: 0.9504, F1-score weighted: 0.9752, TP: 240, TN: 193, FN: 2, FP: 9
 
-Final classifier:  RandomForestClassifier
+Final classifier:  VotingClassifier

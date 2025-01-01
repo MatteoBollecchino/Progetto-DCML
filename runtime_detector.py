@@ -24,7 +24,7 @@ if __name__ == "__main__":
     first_time = True
 
     # The classifier selected after training is loaded from the file
-    classifier = joblib.load("classifier1.z")
+    classifier = joblib.load("classifier2.z")
     classifier_name = classifier.__class__.__name__
     print("Selected classifier:", classifier_name)
 
