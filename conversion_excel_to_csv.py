@@ -1,6 +1,5 @@
 import pandas as pd
 
-# da testare
 if __name__ == "__main__":
     # Load file Excel
     new_file = pd.read_excel("labelled_dataset.xlsx")
