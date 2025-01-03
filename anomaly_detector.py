@@ -68,5 +68,5 @@ if __name__ == "__main__":
     sys.stdout = sys.__stdout__
     
     # Save the selected model in a specific file
-    joblib.dump(final_classifier,"classifier2.z")
+    joblib.dump(final_classifier,"classifier4.z")
 
